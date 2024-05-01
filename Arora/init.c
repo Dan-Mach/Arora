@@ -22,6 +22,82 @@ U64 castleKey[16];
 int fileBrd[BRD_SQ_NUM];
 int rankBrd[BRD_SQ_NUM];
 
+U64 BlackPassedMask[64];
+U64 WhitePassedMask[64];
+U64 IsolatedMask[64];
+
+S_OPTIONS EngineOptions[1];
+
+void InitEvalMasks() {
+
+	int sq, tsq, r, f;
+
+	for(sq = 0; sq < 8; ++sq) {
+        FileBBMask[sq] = 0ULL;
+		RankBBMask[sq] = 0ULL;
+	}
+
+	for(r = rank_8; r >= rank_1; r--) {
+        for (f = file_A; f <= file_H; f++) {
+            sq = r * 8 + f;
+            FileBBMask[f] |= (1ULL << sq);
+            RankBBMask[r] |= (1ULL << sq);
+        }
+	}
+
+	for(sq = 0; sq < 64; ++sq) {
+		IsolatedMask[sq] = 0ULL;
+		WhitePassedMask[sq] = 0ULL;
+		BlackPassedMask[sq] = 0ULL;
+    }
+
+	for(sq = 0; sq < 64; ++sq) {
+		tsq = sq + 8;
+
+        while(tsq < 64) {
+            WhitePassedMask[sq] |= (1ULL << tsq);
+            tsq += 8;
+        }
+
+        tsq = sq - 8;
+        while(tsq >= 0) {
+            BlackPassedMask[sq] |= (1ULL << tsq);
+            tsq -= 8;
+        }
+
+        if(filesBrd[SQ120(sq)] > file_A) {
+            IsolatedMask[sq] |= FileBBMask[filesBrd[SQ120(sq)] - 1];
+
+            tsq = sq + 7;
+            while(tsq < 64) {
+                WhitePassedMask[sq] |= (1ULL << tsq);
+                tsq += 8;
+            }
+
+            tsq = sq - 9;
+            while(tsq >= 0) {
+                BlackPassedMask[sq] |= (1ULL << tsq);
+                tsq -= 8;
+            }
+        }
+
+        if(filesBrd[SQ120(sq)] < file_H) {
+            IsolatedMask[sq] |= FileBBMask[filesBrd[SQ120(sq)] + 1];
+
+            tsq = sq + 9;
+            while(tsq < 64) {
+                WhitePassedMask[sq] |= (1ULL << tsq);
+                tsq += 8;
+            }
+
+            tsq = sq - 7;
+            while(tsq >= 0) {
+                BlackPassedMask[sq] |= (1ULL << tsq);
+                tsq -= 8;
+            }
+        }
+	}
+}
 void fileRankBrd(){
 
     int index = 0;
@@ -122,6 +198,9 @@ void Allinit (){
     initBitMasks();
     initHashKeys();
     fileRankBrd();
+    InitEvalMasks();
+    InitMvvLva();
+    InitPolyBook();
     
   
 }
