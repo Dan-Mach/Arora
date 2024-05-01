@@ -1,2 +1,2 @@
 All: 
-	gcc arora.c attack.c bitboard.c board.c data.c evaluate.c hashkey.c init.c io.c makemove.c misc.c movegen.c perft.c playbook.c polykeys.c pvtable.c search.c uci.c  -o arora
+	gcc xboard.c arora.c uci.c evaluate.c pvtable.c init.c bitboards.c hashkeys.c board.c data.c attack.c io.c movegen.c validate.c makemove.c perft.c search.c misc.c polybook.c polykeys.c -o arora -O2
