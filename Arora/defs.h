@@ -2,6 +2,9 @@
 #define DEFS_H
 
 #include <stdlib.h>
+#include <stdio.h>
+
+#define MAX_HASH 1024
 
 //#define DEBUG
 #ifndef DEBUG
@@ -35,8 +38,9 @@ typedef unsigned long long U64;
 enum { EMPTY, wP, wN, wB, wR, wQ, wK, bP, bN, bB, bR, bQ, bK };
 enum {file_A, file_B, file_C, file_D, file_E, file_F, file_G, file_H, file_NONE};
 enum {rank_1, rank_2, rank_3, rank_4, rank_5, rank_6, rank_7, rank_8, rank_NONE};
+
 enum { WHITE, BLACK, BOTH};
-enum { UNIMODE, XBOARDMODE, CONSOLEMODE};
+enum { UCIMODE, XBOARDMODE, CONSOLEMODE};
 
 enum {
     A1 = 21, B1, C1, D1, E1, F1, G1, H1,
@@ -87,7 +91,7 @@ typedef struct {
     int move;
     int castlePerm;
     int fiftyMove;
-    int enPer;
+    int enPass;
     U64 posKey;
 }undo;
 
@@ -115,6 +119,12 @@ typedef struct {
 
     //piece list
     int pList[13][10];
+
+    S_HASHTABLE HashTable[1];
+    int PvArray[MAXDEPTH];
+
+    int searchHistory[13][BRD_SQ_NUM];
+    int searchKillers[2][MAXDEPTH];
 
 
 }C_board;

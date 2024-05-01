@@ -82,26 +82,44 @@ int MaterialDraw(const C_board *pos) {
 	ASSERT(CheckBoard(pos));
 	
     if (!pos->pceNum[wR] && !pos->pceNum[bR] && !pos->pceNum[wQ] && !pos->pceNum[bQ]) {
-	  if (!pos->pceNum[bB] && !pos->pceNum[wB]) {
-	      if (pos->pceNum[wN] < 3 && pos->pceNum[bN] < 3) {  return TRUE; }
-	  } else if (!pos->pceNum[wN] && !pos->pceNum[bN]) {
-	     if (abs(pos->pceNum[wB] - pos->pceNum[bB]) < 2) { return TRUE; }
-	  } else if ((pos->pceNum[wN] < 3 && !pos->pceNum[wB]) || (pos->pceNum[wB] == 1 && !pos->pceNum[wN])) {
-	    if ((pos->pceNum[bN] < 3 && !pos->pceNum[bB]) || (pos->pceNum[bB] == 1 && !pos->pceNum[bN]))  { return TRUE; }
-	  }
-	} else if (!pos->pceNum[wQ] && !pos->pceNum[bQ]) {
+
+	    if (!pos->pceNum[bB] && !pos->pceNum[wB]) {
+	        if (pos->pceNum[wN] < 3 && pos->pceNum[bN] < 3){ 
+                return TRUE; 
+            }
+	    } 
+        else if (!pos->pceNum[wN] && !pos->pceNum[bN]) {
+	        if (abs(pos->pceNum[wB] - pos->pceNum[bB]) < 2){
+                return TRUE; 
+            }
+	    }
+        else if ((pos->pceNum[wN] < 3 && !pos->pceNum[wB]) || (pos->pceNum[wB] == 1 && !pos->pceNum[wN])) {
+	        if ((pos->pceNum[bN] < 3 && !pos->pceNum[bB]) || (pos->pceNum[bB] == 1 && !pos->pceNum[bN])) { 
+                return TRUE; 
+            }
+	    }
+	} 
+    else if (!pos->pceNum[wQ] && !pos->pceNum[bQ]) {
         if (pos->pceNum[wR] == 1 && pos->pceNum[bR] == 1) {
-            if ((pos->pceNum[wN] + pos->pceNum[wB]) < 2 && (pos->pceNum[bN] + pos->pceNum[bB]) < 2)	{ return TRUE; }
-        } else if (pos->pceNum[wR] == 1 && !pos->pceNum[bR]) {
-            if ((pos->pceNum[wN] + pos->pceNum[wB] == 0) && (((pos->pceNum[bN] + pos->pceNum[bB]) == 1) || ((pos->pceNum[bN] + pos->pceNum[bB]) == 2))) { return TRUE; }
-        } else if (pos->pceNum[bR] == 1 && !pos->pceNum[wR]) {
-            if ((pos->pceNum[bN] + pos->pceNum[bB] == 0) && (((pos->pceNum[wN] + pos->pceNum[wB]) == 1) || ((pos->pceNum[wN] + pos->pceNum[wB]) == 2))) { return TRUE; }
+            if ((pos->pceNum[wN] + pos->pceNum[wB]) < 2 && (pos->pceNum[bN] + pos->pceNum[bB]) < 2){ 
+                return TRUE; 
+            }
+        } 
+        else if (pos->pceNum[wR] == 1 && !pos->pceNum[bR]) {
+            if ((pos->pceNum[wN] + pos->pceNum[wB] == 0) && (((pos->pceNum[bN] + pos->pceNum[bB]) == 1) || ((pos->pceNum[bN] + pos->pceNum[bB]) == 2))){ 
+                return TRUE; 
+            }
+        } 
+        else if (pos->pceNum[bR] == 1 && !pos->pceNum[wR]) {
+            if ((pos->pceNum[bN] + pos->pceNum[bB] == 0) && (((pos->pceNum[wN] + pos->pceNum[wB]) == 1) || ((pos->pceNum[wN] + pos->pceNum[wB]) == 2))){ 
+                return TRUE; 
+            }
         }
     }
   return FALSE;
 }
 
-#define ENDGAME_MAT (1 * PieceVal[wR] + 2 * PieceVal[wN] + 2 * PieceVal[wP] + PieceVal[wK])
+#define ENDGAME_MAT (1 * pieceVal[wR] + 2 * pieceVal[wN] + 2 * pieceVal[wP] + pieceVal[wK])
 
 int EvalPosition(const C_board *pos) {
 
@@ -139,7 +157,7 @@ int EvalPosition(const C_board *pos) {
 	for(pceNum = 0; pceNum < pos->pceNum[pce]; ++pceNum) {
 		sq = pos->pList[pce][pceNum];
 		ASSERT(SqOnBoard(sq));
-		ASSERT(MIRROR64(SQ64(sq))>=0 && MIRROR64(SQ64(sq))<=63);
+		ASSERT(MIRROR64(SQ64(sq)) >= 0 && MIRROR64(SQ64(sq)) <= 63);
 		score -= PawnTable[MIRROR64(SQ64(sq))];	
 		
 		if( (IsolatedMask[SQ64(sq)] & pos->pawns[BLACK]) == 0) {
@@ -196,7 +214,7 @@ int EvalPosition(const C_board *pos) {
 		
 		if(!(pos->pawns[BOTH] & FileBBMask[filesBrd[sq]])) {
 			score += RookOpenFile;
-		} else if(!(pos->pawns[WHITE] & FileBBMask[FilesBrd[sq]])) {
+		} else if(!(pos->pawns[WHITE] & FileBBMask[filesBrd[sq]])) {
 			score += RookSemiOpenFile;
 		}
 	}	
@@ -223,7 +241,7 @@ int EvalPosition(const C_board *pos) {
 		ASSERT(FileRankValid(FilesBrd[sq]));
 		if(!(pos->pawns[BOTH] & FileBBMask[filesBrd[sq]])) {
 			score += QueenOpenFile;
-		} else if(!(pos->pawns[WHITE] & FileBBMask[FilesBrd[sq]])) {
+		} else if(!(pos->pawns[WHITE] & FileBBMask[filesBrd[sq]])) {
 			score += QueenSemiOpenFile;
 		}
 	}	
@@ -236,7 +254,7 @@ int EvalPosition(const C_board *pos) {
 		ASSERT(FileRankValid(FilesBrd[sq]));
 		if(!(pos->pawns[BOTH] & FileBBMask[filesBrd[sq]])) {
 			score -= QueenOpenFile;
-		} else if(!(pos->pawns[BLACK] & FileBBMask[FilesBrd[sq]])) {
+		} else if(!(pos->pawns[BLACK] & FileBBMask[filesBrd[sq]])) {
 			score -= QueenSemiOpenFile;
 		}
 	}	

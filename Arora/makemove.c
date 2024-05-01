@@ -2,10 +2,10 @@
 #include "defs.h"
 #include "stdio.h"
 
-#define HASH_PCE(pce,sq) (pos->posKey ^= (PieceKeys[(pce)][(sq)]))
-#define HASH_CA (pos->posKey ^= (CastleKeys[(pos->castlePerm)]))
-#define HASH_SIDE (pos->posKey ^= (SideKey))
-#define HASH_EP (pos->posKey ^= (PieceKeys[EMPTY][(pos->enPas)]))
+#define HASH_PCE(pce,sq) (pos->posKey ^= (pieceKeys[(pce)][(sq)]))
+#define HASH_CA (pos->posKey ^= (castleKey[(pos->castlePerm)]))
+#define HASH_SIDE (pos->posKey ^= (sideKey))
+#define HASH_EP (pos->posKey ^= (pieceKeys[EMPTY][(pos->enPass)]))
 
 const int CastlePerm[120] = {
     15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
@@ -185,8 +185,8 @@ int MakeMove(C_board *pos, int move) {
     HASH_CA;
 	
 	pos->history[pos->hisply].move = move;
-    pos->history[pos->hisply].fiftyMove = pos->fiftyMove;
-    pos->history[pos->hisply].enPas = pos->enPas;
+    pos->history[pos->hisply].fiftyMove = pos->fifty_Move;
+    pos->history[pos->hisply].enPass = pos->enPass;
     pos->history[pos->hisply].castlePerm = pos->castlePerm;
 
     pos->castlePerm &= CastlePerm[from];
@@ -262,7 +262,7 @@ void TakeMove(C_board *pos) {
 	ASSERT(pos->hisPly >= 0 && pos->hisPly < MAXGAMEMOVES);
 	ASSERT(pos->ply >= 0 && pos->ply < MAXDEPTH);
 	
-    int move = pos->history[pos->hisPly].move;
+    int move = pos->history[pos->hisply].move;
     int from = FROMSQ(move);
     int to = TOSQ(move);	
 	
@@ -274,7 +274,7 @@ void TakeMove(C_board *pos) {
 
     pos->castlePerm = pos->history[pos->hisply].castlePerm;
     pos->fifty_Move = pos->history[pos->hisply].fiftyMove;
-    pos->enPass = pos->history[pos->hisply].enPas;
+    pos->enPass = pos->history[pos->hisply].enPass;
 
     if(pos->enPass != NO_SQ) HASH_EP;
     HASH_CA;
@@ -332,8 +332,8 @@ void MakeNullMove(C_board *pos) {
     if(pos->enPass != NO_SQ) HASH_EP;
 
     pos->history[pos->hisply].move = NOMOVE;
-    pos->history[pos->hisply].fiftyMove = pos->fiftyMove;
-    pos->history[pos->hisply].enPas = pos->enPas;
+    pos->history[pos->hisply].fiftyMove = pos->fifty_Move;
+    pos->history[pos->hisply].enPass = pos->enPass;
     pos->history[pos->hisply].castlePerm = pos->castlePerm;
     pos->enPass = NO_SQ;
 
@@ -358,7 +358,7 @@ void TakeNullMove(C_board *pos) {
 
     pos->castlePerm = pos->history[pos->hisply].castlePerm;
     pos->fifty_Move = pos->history[pos->hisply].fiftyMove;
-    pos->enPass = pos->history[pos->hisply].enPas;
+    pos->enPass = pos->history[pos->hisply].enPass;
 
     if(pos->enPass != NO_SQ) HASH_EP;
     pos->side ^= 1;

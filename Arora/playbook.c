@@ -54,14 +54,14 @@ void CleanPolyBook() {
 	free(entries);
 }
 
-int HasPawnForCapture(const S_BOARD *board) {
+int HasPawnForCapture(const C_board *board) {
 	int sqWithPawn = 0;
 	int targetPce = (board->side == WHITE) ? wP : bP;
-	if(board->enPas != NO_SQ) {
+	if(board->enPass != NO_SQ) {
 		if(board->side == WHITE) {
-			sqWithPawn = board->enPas - 10;
+			sqWithPawn = board->enPass - 10;
 		} else {
-			sqWithPawn = board->enPas + 10;
+			sqWithPawn = board->enPass + 10;
 		}
 		
 		if(board->pieces[sqWithPawn + 1] == targetPce) {
@@ -73,7 +73,7 @@ int HasPawnForCapture(const S_BOARD *board) {
 	return FALSE;
 }
 
-U64 PolyKeyFromBoard(const S_BOARD *board) {
+U64 PolyKeyFromBoard(const C_board *board) {
 
 	int sq = 0, rank = 0, file = 0;
 	U64 finalKey = 0;
@@ -86,8 +86,8 @@ U64 PolyKeyFromBoard(const S_BOARD *board) {
 		if(piece != NO_SQ && piece != EMPTY && piece != OFFBOARD) {
 			ASSERT(piece >= wP && piece <= bK);
 			polyPiece = PolyKindOfPiece[piece];
-			rank = RanksBrd[sq];
-			file = FilesBrd[sq];
+			rank = ranksBrd[sq];
+			file = filesBrd[sq];
 			finalKey ^= Random64Poly[(64 * polyPiece) + (8 * rank) + file];
 		}
 	}
@@ -103,7 +103,7 @@ U64 PolyKeyFromBoard(const S_BOARD *board) {
 	// enpassant
 	offset = 772;
 	if(HasPawnForCapture(board) == TRUE) {
-		file = FilesBrd[board->enPas];
+		file = filesBrd[board->enPass];
 		finalKey ^= Random64Poly[offset + file];
 	}
 	
@@ -142,7 +142,7 @@ U64 endian_swap_u64(U64 x)
     return x;
 }
 
-int ConvertPolyMoveToInternalMove(unsigned short polyMove, S_BOARD *board) {
+int ConvertPolyMoveToInternalMove(unsigned short polyMove, C_board *board) {
 	
 	int ff = (polyMove >> 6) & 7;
 	int fr = (polyMove >> 9) & 7;
@@ -153,10 +153,10 @@ int ConvertPolyMoveToInternalMove(unsigned short polyMove, S_BOARD *board) {
 	char moveString[6];
 	if(pp == 0) {
 		sprintf(moveString, "%c%c%c%c",
-		FileChar[ff],
-		RankChar[fr],
-		FileChar[tf],
-		RankChar[tr]);
+		fileChar[ff],
+		rankChar[fr],
+		fileChar[tf],
+		rankChar[tr]);
 	} else {
 		char promChar = 'q';
 		switch(pp) {
@@ -165,17 +165,17 @@ int ConvertPolyMoveToInternalMove(unsigned short polyMove, S_BOARD *board) {
 			case 3: promChar = 'r'; break;
 		}
 		sprintf(moveString, "%c%c%c%c%c",
-		FileChar[ff],
-		RankChar[fr],
-		FileChar[tf],
-		RankChar[tr],
+		fileChar[ff],
+		rankChar[fr],
+		fileChar[tf],
+		rankChar[tr],
 		promChar);
 	}
 	
 	return ParseMove(moveString, board);
 }
 
-int GetBookMove(S_BOARD *board) {
+int GetBookMove(C_board *board) {
 	int index = 0;
 	S_POLY_BOOK_ENTRY *entry;
 	unsigned short move;

@@ -4,7 +4,7 @@
 #include "defs.h"
 
 #define MOVE(f,t,ca,pro,fl) ( (f) | ((t) << 7) | ( (ca) << 14 ) | ( (pro) << 20 ) | (fl))
-#define SQOFFBOARD(sq) (FilesBrd[(sq)]==OFFBOARD)
+#define SQOFFBOARD(sq) (filesBrd[(sq)]==OFFBOARD)
 
 const int LoopSlidePce[8] = {
  wB, wR, wQ, 0, bB, bR, bQ, 0
@@ -253,7 +253,7 @@ void GenerateAllMoves(const C_board *pos, S_MOVELIST *list) {
 
 			if(pos->pieces[sq - 10] == EMPTY) {
 				AddBlackPawnMove(pos, sq, sq-10, list);
-				if(RanksBrd[sq] == rank_7 && pos->pieces[sq - 20] == EMPTY) {
+				if(ranksBrd[sq] == rank_7 && pos->pieces[sq - 20] == EMPTY) {
 					AddQuietMove(pos, MOVE(sq,(sq-20),EMPTY,EMPTY,MFLAGPS),list);
 				}
 			}
