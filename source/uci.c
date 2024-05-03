@@ -148,7 +148,7 @@ void Uci_Loop(C_board *pos, S_SEARCHINFO *info) {
             break;
         } else if (!strncmp(line, "uci", 3)) {
             printf("id name %s\n",NAME);
-            printf("id author Bluefever\n");
+            printf("id author Dimar\n");
             printf("uciok\n");
         } else if (!strncmp(line, "debug", 4)) {
             DebugAnalysisTest(pos,info);

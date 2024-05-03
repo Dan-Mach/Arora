@@ -34,15 +34,15 @@ int checkresult(C_board *pos) {
 	ASSERT(CheckBoard(pos));
 
     if (pos->fifty_Move > 100) {
-     printf("1/2-1/2 {fifty move rule (claimed by Vice)}\n"); return TRUE;
+     printf("1/2-1/2 {fifty move rule (claimed by Arora)}\n"); return TRUE;
     }
 
     if (ThreeFoldRep(pos) >= 2) {
-     printf("1/2-1/2 {3-fold repetition (claimed by Vice)}\n"); return TRUE;
+     printf("1/2-1/2 {3-fold repetition (claimed by Arora)}\n"); return TRUE;
     }
 
 	if (DrawMaterial(pos) == TRUE) {
-     printf("1/2-1/2 {insufficient material (claimed by Vice)}\n"); return TRUE;
+     printf("1/2-1/2 {insufficient material (claimed by Arora)}\n"); return TRUE;
     }
 
 	S_MOVELIST list[1];
@@ -66,12 +66,12 @@ int checkresult(C_board *pos) {
 
 	if(InCheck == TRUE)	{
 	    if(pos->side == WHITE) {
-	      printf("0-1 {black mates (claimed by Vice)}\n");return TRUE;
+	      printf("0-1 {black mates (claimed by Arora)}\n");return TRUE;
         } else {
-	      printf("0-1 {white mates (claimed by Vice)}\n");return TRUE;
+	      printf("0-1 {white mates (claimed by Arora)}\n");return TRUE;
         }
     } else {
-      printf("\n1/2-1/2 {stalemate (claimed by Vice)}\n");return TRUE;
+      printf("\n1/2-1/2 {stalemate (claimed by Arora)}\n");return TRUE;
     }
 	return FALSE;
 }
