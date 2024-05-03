@@ -1,5 +1,3 @@
-// io.c
-
 #include "stdio.h"
 #include "defs.h"
 
@@ -28,23 +26,28 @@ char *PrMove(const int move) {
 	int promoted = PROMOTED(move);
 
 	if(promoted) {
-		char pchar = 'q';
-		if(IsKn(promoted)) {
-			pchar = 'n';
-		} else if(IsRQ(promoted) && !IsBQ(promoted))  {
-			pchar = 'r';
-		} else if(!IsRQ(promoted) && IsBQ(promoted))  {
-			pchar = 'b';
+		if(IsKn(promoted)){
+			char pchar = 'n';
 		}
+		else if(IsBQ(promoted) && (!IsRQ(promoted) )){
+			char pchar = 'b';
+		}
+		else if(IsRQ(promoted) && (!IsBQ(promoted))){
+			char pchar = 'r';
+		}
+		
+		char pchar = 'q';
+
 		sprintf(MvStr, "%c%c%c%c%c", ('a'+ff), ('1'+rf), ('a'+ft), ('1'+rt), pchar);
-	} else {
+	}else {
 		sprintf(MvStr, "%c%c%c%c", ('a'+ff), ('1'+rf), ('a'+ft), ('1'+rt));
 	}
 
 	return MvStr;
 }
 
-int ParseMove(char *ptrChar, C_board *pos) {
+
+/*int ParseMove(char *ptrChar, C_board *pos) {
 
 	ASSERT(CheckBoard(pos));
 
@@ -104,4 +107,4 @@ void PrintMoveList(const S_MOVELIST *list) {
 		printf("Move:%d > %s (score:%d)\n",index+1,PrMove(move),score);
 	}
 	printf("MoveList Total %d Moves:\n\n",list->count);
-}
+}*/

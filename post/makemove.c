@@ -42,14 +42,16 @@ static void ClearPiece(const int sq, C_board *pos) {
 	pos->pieces[sq] = EMPTY;
     pos->material[col] -= pieceVal[pce];
 	
-	if(pieceBig[pce]) {
+	if(pieceBig[pce]){
 			pos->bigPce[col]--;
-		if(pieceMaj[pce]) {
+		if(pieceMaj[pce]){
 			pos->majPce[col]--;
-		} else {
+		} 
+        else {
 			pos->minPce[col]--;
 		}
-	} else {
+	}
+    else {
 		CLRBIT(pos->pawns[col],SQ64(sq));
 		CLRBIT(pos->pawns[BOTH],SQ64(sq));
 	}
@@ -132,7 +134,7 @@ static void MovePiece(const int from, const int to, C_board *pos) {
 		if(pos->pList[pce][index] == from) {
 			pos->pList[pce][index] = to;
 #ifdef DEBUG
-			t_PieceNum = TRUE;
+        t_PieceNum = TRUE;
 #endif
 			break;
 		}
@@ -163,21 +165,23 @@ int MakeMove(C_board *pos, int move) {
         } else {
             ClearPiece(to+10,pos);
         }
-    } else if (move & MFLAGCA) {
+    } 
+    else if (move & MFLAGCA) {
         switch(to) {
             case C1:
                 MovePiece(A1, D1, pos);
-			break;
+			    break;
             case C8:
                 MovePiece(A8, D8, pos);
-			break;
+			    break;
             case G1:
                 MovePiece(H1, F1, pos);
-			break;
+			    break;
             case G8:
                 MovePiece(H8, F8, pos);
-			break;
-            default: ASSERT(FALSE); break;
+			    break;
+            default: ASSERT(FALSE); 
+                 break;
         }
     }	
 	

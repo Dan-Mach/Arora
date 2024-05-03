@@ -5,58 +5,25 @@
 
 #define WAC1 "r1b1k2r/ppppnppp/2n2q2/2b5/3NP3/2P1B3/PP3PPP/RN1QKB1R w KQkq - 0 1"
 #define PERFT "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1"
+#define PAWNMOVE "rnbqk1r/pp1p1ppPp/8/2p1pP2/1P1P4/3P3P/P1P1P3/RNBQKBNR w KQkq e6 0 1"
 
-int main (int argc, char *argv[]) {
+int main (){
 
-    Allinit ();
+	Allinit();
 
-    C_board pos[1];
-    S_SEARCHINFO info[1];
-    info->quit = FALSE;
-	pos->HashTable->pTable = NULL;
-    InitHashTable(pos->HashTable, 64);
-	setbuf(stdin, NULL);
-    setbuf(stdout, NULL);
-    
-    int ArgNum = 0;
-    
-    for(ArgNum = 0; ArgNum < argc; ++ArgNum) {
-    	if(strncmp(argv[ArgNum], "NoBook", 6) == 0) {
-    		EngineOptions->UseBook = FALSE;
-    		printf("Book Off\n");
-    	}
-    }
+	int move = 0;
+	int from = A2; int to = H7;
+	int cap = wR;  int prom = bR;
 
-	printf("Welcome to Arora Type 'arora' for console mode...\n");
+	move = ((from) | (to << 7) | ( cap << 14 ) | (prom << 20));
+	
+	printf("\n from: %d to: %d cap:%d prom:%d \n",
+		FROMSQ(move), TOSQ(move), CAPTURED(move),
+		PROMOTED(move));
 
-	char line[256];
-	while (TRUE) {
-		memset(&line[0], 0, sizeof(line));
-
-		fflush(stdout);
-		if (!fgets(line, 256, stdin))
-			continue;
-		if (line[0] == '\n')
-			continue;
-		if (!strncmp(line, "uci",3)) {
-			Uci_Loop(pos, info);
-			if(info->quit == TRUE) break;
-			continue;
-		} else if (!strncmp(line, "xboard",6))	{
-			XBoard_Loop(pos, info);
-			if(info->quit == TRUE) break;
-			continue;
-		} else if (!strncmp(line, "arora",5))	{
-			Console_Loop(pos, info);
-			if(info->quit == TRUE) break;
-			continue;
-		} else if(!strncmp(line, "quit",4))	{
-			break;
-		}
-	}
-
-	free(pos->HashTable->pTable);
-	CleanPolyBook();
+	printf("\n Algebraic from: %s", PrSq(from));
+	printf("\n Algebraic to : %s", PrSq(to));
+	printf("\n Algebraic move: %s", PrMove(move));
 
     return 0;
 }

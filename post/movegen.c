@@ -163,7 +163,8 @@ static void AddBlackPawnCapMove( const C_board *pos, const int from, const int t
 		AddCaptureMove(pos, MOVE(from,to,cap,bR,0), list);
 		AddCaptureMove(pos, MOVE(from,to,cap,bB,0), list);
 		AddCaptureMove(pos, MOVE(from,to,cap,bN,0), list);
-	} else {
+	} 
+	else {
 		AddCaptureMove(pos, MOVE(from,to,cap,EMPTY,0), list);
 	}
 }
@@ -182,7 +183,7 @@ static void AddBlackPawnMove( const C_board *pos, const int from, const int to, 
 	} else {
 		AddQuietMove(pos, MOVE(from,to,EMPTY,EMPTY,0), list);
 	}
-}
+} 
 
 void GenerateAllMoves(const C_board *pos, S_MOVELIST *list) {
 
@@ -228,6 +229,7 @@ void GenerateAllMoves(const C_board *pos, S_MOVELIST *list) {
 			}
 		}
 
+		//castle permission for white
 		if(pos->castlePerm & WKCA) {
 			if(pos->pieces[F1] == EMPTY && pos->pieces[G1] == EMPTY) {
 				if(!SqAttacked(E1,BLACK,pos) && !SqAttacked(F1,BLACK,pos) ) {
@@ -244,7 +246,8 @@ void GenerateAllMoves(const C_board *pos, S_MOVELIST *list) {
 			}
 		}
 
-	} else {
+	} 
+	else {
 
 		for(pceNum = 0; pceNum < pos->pceNum[bP]; ++pceNum) {
 			sq = pos->pList[bP][pceNum];
@@ -421,7 +424,7 @@ void GenerateAllCaps(const C_board *pos, S_MOVELIST *list) {
 		}
 	}
 
-	/* Loop for slide pieces */
+	 //Loop for slide pieces 
 	pceIndex = LoopSlideIndex[side];
 	pce = LoopSlidePce[pceIndex++];
 	while( pce != 0) {
@@ -451,7 +454,7 @@ void GenerateAllCaps(const C_board *pos, S_MOVELIST *list) {
 		pce = LoopSlidePce[pceIndex++];
 	}
 
-	/* Loop for non slide */
+	//Loop for non slide 
 	pceIndex = LoopNonSlideIndex[side];
 	pce = LoopNonSlidePce[pceIndex++];
 

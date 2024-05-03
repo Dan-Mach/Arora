@@ -53,7 +53,7 @@ int PieceValid(const int pce) {
 	return (pce >= wP && pce <= bK) ? 1 : 0;
 }
 
-void DebugAnalysisTest(C_board *pos, S_SEARCHINFO *info) {
+/*void DebugAnalysisTest(C_board *pos, S_SEARCHINFO *info) {
 
 	FILE *file;
     file = fopen("lct2.epd","r");
@@ -81,7 +81,7 @@ void DebugAnalysisTest(C_board *pos, S_SEARCHINFO *info) {
         }
     }
 }
-
+*/
 
 
 void MirrorEvalTest(C_board *pos) {
