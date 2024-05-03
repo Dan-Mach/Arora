@@ -35,7 +35,7 @@ void PerftTest(int depth, C_board *pos) {
 
     ASSERT(CheckBoard(pos));
 
-	PrintBoard(pos);
+	printBoard(pos);
 	printf("\nStarting Test To Depth:%d\n",depth);	
 	leafNodes = 0;
 	int start = GetTimeMs();

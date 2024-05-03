@@ -4,9 +4,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define MAX_HASH 1024
+
 
 //#define DEBUG
+
+#define MAX_HASH 1024
 #ifndef DEBUG
 #define ASSERT(n)
 #else
@@ -189,7 +191,7 @@ typedef struct {
 #define MIRROR64(sq) (Mirror64[(sq)])
 
 
-extern int Mirror64[64];
+
 // GLOBAL 
 extern int SQ120toSQ64[BRD_SQ_NUM];
 extern int SQ64toSQ120[64];
@@ -223,7 +225,7 @@ extern int pieceRookQueen[13];
 extern int pieceBishopQueen[13];
 extern int pieceSlides[13];
 
-extern int mirror64[64];
+extern int Mirror64[64];
 
 extern U64 FileBBMask[8];
 extern U64 RankBBMask[8];
@@ -238,12 +240,12 @@ extern S_OPTIONS EngineOptions[1];
 /*functions*/
 
 //board.c
-extern  void resetBoard( C_board *pos);
+extern  void ResetBoard( C_board *pos);
 extern int parse_fen( char *fen, C_board *pos);
 extern void printBoard(const C_board *pos);
-extern void updatelist_Material (C_board *pos);
-extern void CheckBoard(const C_board *pos);
-extern void mirrorBoard( C_board *pos);
+extern void UpdatelistsMaterial (C_board *pos);
+extern int CheckBoard(const C_board *pos);
+extern void MirrorBoard( C_board *pos);
 
 //hashKey.c
 extern U64 GeneratePosKey (const C_board *pos);

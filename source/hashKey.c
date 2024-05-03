@@ -8,7 +8,7 @@ U64 GeneratePosKey (const C_board *pos){
     U64 finalKey = 0;
     int piece = EMPTY;
 
-    for( sq = 0; sq <BRD_SQ_NUM; ++sq){
+    for( sq = 0; sq < BRD_SQ_NUM; ++sq){
         piece = pos ->pieces[sq];
         // There is an error here
         if(piece != NO_SQ && piece != EMPTY && piece != OFFBOARD){

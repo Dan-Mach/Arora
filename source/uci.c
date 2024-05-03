@@ -80,14 +80,14 @@ void ParsePosition(char* lineIn, C_board *pos) {
     char *ptrChar = lineIn;
 
     if(strncmp(lineIn, "startpos", 8) == 0){
-        ParseFen(START_FEN, pos);
+        parse_fen(START_FEN, pos);
     } else {
         ptrChar = strstr(lineIn, "fen");
         if(ptrChar == NULL) {
-            ParseFen(START_FEN, pos);
+            parse_fen(START_FEN, pos);
         } else {
             ptrChar+=4;
-            ParseFen(ptrChar, pos);
+            parse_fen(ptrChar, pos);
         }
     }
 
@@ -105,7 +105,7 @@ void ParsePosition(char* lineIn, C_board *pos) {
               ptrChar++;
         }
     }
-	PrintBoard(pos);
+	printBoard(pos);
 }
 
 void Uci_Loop(C_board *pos, S_SEARCHINFO *info) {

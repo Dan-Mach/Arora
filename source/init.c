@@ -6,7 +6,7 @@
                     (U64)rand() << 15 | \
                     (U64)rand() << 30 | \
                     (U64)rand() << 45 | \
-                    ((U64)rand() & 0xff) << 60 )
+                    ((U64)rand() & 0xf) << 60 )
     
 int SQ120toSQ64[BRD_SQ_NUM];
 int SQ64toSQ120[64];
@@ -19,12 +19,14 @@ U64 pieceKeys[13][120];
 U64 sideKey;
 U64 castleKey[16];
 
-int fileBrd[BRD_SQ_NUM];
-int rankBrd[BRD_SQ_NUM];
+int filesBrd[BRD_SQ_NUM];
+int ranksBrd[BRD_SQ_NUM];
 
 U64 BlackPassedMask[64];
 U64 WhitePassedMask[64];
 U64 IsolatedMask[64];
+U64 FileBBMask[8];
+U64 RankBBMask[8];
 
 S_OPTIONS EngineOptions[1];
 
@@ -98,6 +100,7 @@ void InitEvalMasks() {
         }
 	}
 }
+
 void fileRankBrd(){
 
     int index = 0;
@@ -108,16 +111,16 @@ void fileRankBrd(){
 
     for( index = 0; index <  BRD_SQ_NUM; ++index){
 
-        fileBrd[index] = OFFBOARD;
-        rankBrd[index] = OFFBOARD;
+        filesBrd[index] = OFFBOARD;
+        ranksBrd[index] = OFFBOARD;
 
     }
 
     for (rank = rank_1; rank <= rank_8; ++rank){
         for(file = file_A; file <= file_H; ++file){
             sq = FR2SQ(file,rank);
-            fileBrd[sq] = file;
-            rankBrd[sq] = rank;
+            filesBrd[sq] = file;
+            ranksBrd[sq] = rank;
         }
     }
 
@@ -153,7 +156,7 @@ void initHashKeys(){
 
 }
 
-// has an error
+
 void initBitMasks(){
     int index = 0;
 
@@ -196,7 +199,7 @@ void Allinit (){
 
     InitSQ120to64();
     initBitMasks();
-    initHashKeys();
+    initHashKeys(); 
     fileRankBrd();
     InitEvalMasks();
     InitMvvLva();

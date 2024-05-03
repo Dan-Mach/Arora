@@ -18,7 +18,7 @@ int MoveListOk(const S_MOVELIST *list,  const C_board *pos) {
 			return FALSE;
 		}
 		if(!PieceValid(pos->pieces[from])) {
-			PrintBoard(pos);
+			printBoard(pos);
 			return FALSE;
 		}
 	}
@@ -72,7 +72,7 @@ void DebugAnalysisTest(C_board *pos, S_SEARCHINFO *info) {
 			info->starttime = GetTimeMs();
 			info->stoptime = info->starttime + time;
 			ClearHashTable(pos->HashTable);
-            ParseFen(lineIn, pos);
+            parse_fen(lineIn, pos);
             printf("\n%s\n",lineIn);
 			printf("time:%d start:%d stop:%d depth:%d timeset:%d\n",
 				time,info->starttime,info->stoptime,info->depth,info->timeset);
@@ -95,7 +95,7 @@ void MirrorEvalTest(C_board *pos) {
         return;
     }  else {
         while(fgets (lineIn , 1024 , file) != NULL) {
-            ParseFen(lineIn, pos);
+            parse_fen(lineIn, pos);
             positions++;
             ev1 = EvalPosition(pos);
             MirrorBoard(pos);
@@ -103,10 +103,10 @@ void MirrorEvalTest(C_board *pos) {
 
             if(ev1 != ev2) {
                 printf("\n\n\n");
-                ParseFen(lineIn, pos);
-                PrintBoard(pos);
+                parse_fen(lineIn, pos);
+                printBoard(pos);
                 MirrorBoard(pos);
-                PrintBoard(pos);
+                printBoard(pos);
                 printf("\n\nMirror Fail:\n%s\n",lineIn);
                 getchar();
                 return;

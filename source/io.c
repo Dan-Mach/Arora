@@ -71,11 +71,14 @@ int ParseMove(char *ptrChar, C_board *pos) {
 			if(PromPce!=EMPTY) {
 				if(IsRQ(PromPce) && !IsBQ(PromPce) && ptrChar[4]=='r') {
 					return Move;
-				} else if(!IsRQ(PromPce) && IsBQ(PromPce) && ptrChar[4]=='b') {
+				} 
+				else if(!IsRQ(PromPce) && IsBQ(PromPce) && ptrChar[4]=='b') {
 					return Move;
-				} else if(IsRQ(PromPce) && IsBQ(PromPce) && ptrChar[4]=='q') {
+				} 
+				else if(IsRQ(PromPce) && IsBQ(PromPce) && ptrChar[4]=='q') {
 					return Move;
-				} else if(IsKn(PromPce)&& ptrChar[4]=='n') {
+				} 
+				else if(IsKn(PromPce)&& ptrChar[4]=='n') {
 					return Move;
 				}
 				continue;

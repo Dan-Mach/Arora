@@ -348,7 +348,7 @@ void SearchPosition(C_board *pos, S_SEARCHINFO *info) {
 	} else {
 		printf("\n\n***!! Vice makes move %s !!***\n\n",PrMove(bestMove));
 		MakeMove(pos, bestMove);
-		PrintBoard(pos);
+		printBoard(pos);
 	}
 
 }

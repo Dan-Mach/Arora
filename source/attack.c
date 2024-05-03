@@ -1,5 +1,5 @@
 
-#include "stdio.h"
+#include <stdio.h>
 #include "defs.h"
 
 const int KnDir[8] = { -8, -19,	-21, -12, 8, 19, 21, 12 };

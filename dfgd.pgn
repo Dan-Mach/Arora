@@ -18,3 +18,152 @@
 
  *
 
+[Event "Computer chess game"]
+[Site "DESKTOP-GH6R4AR"]
+[Date "2024.05.02"]
+[Round "?"]
+[White "Arora"]
+[Black "SOS 5.1 for Arena"]
+[Result "*"]
+[BlackElo "2000"]
+[ECO "B00"]
+[Opening "King's Pawn"]
+[Time "11:36:50"]
+[WhiteElo "2000"]
+[TimeControl "300+6"]
+[Termination "unterminated"]
+[PlyCount "1"]
+[WhiteType "program"]
+[BlackType "program"]
+
+1. e4 *
+
+[Event "Computer chess game"]
+[Site "DESKTOP-GH6R4AR"]
+[Date "2024.05.02"]
+[Round "?"]
+[White "Vice"]
+[Black "SOS 5.1 for Arena"]
+[Result "*"]
+[BlackElo "2000"]
+[ECO "A46"]
+[Opening "Indian"]
+[Time "11:38:50"]
+[Variation "2.Nf3 d6"]
+[WhiteElo "2000"]
+[TimeControl "300+6"]
+[Termination "unterminated"]
+[PlyCount "7"]
+[WhiteType "program"]
+[BlackType "program"]
+
+1. d4 Nf6 2. Nf3 d6 3. e3 g6 {(g7-g6 Nb1-c3 d6-d5 Bf1-e2 Bf8-g7 O-O O-O
+Ra1-b1 c7-c6 b2-b3 Qd8-d6 Bc1-d2 Nb8-d7) -0.31/15 41} 4. Bb5+ {(f1b5 c8d7
+b1c3 d7b5) +0.60/4 0} *
+
+[Event "Computer chess game"]
+[Site "DESKTOP-GH6R4AR"]
+[Date "2024.05.02"]
+[Round "?"]
+[White "Marvel ENT"]
+[Black "Vice"]
+[Result "0-1"]
+[BlackElo "2000"]
+[ECO "B30"]
+[Opening "Sicilian"]
+[Time "11:40:14"]
+[Variation "2...Nc6 3.Nc3 g6"]
+[WhiteElo "2400"]
+[TimeControl "300+6"]
+[Termination "normal"]
+[PlyCount "74"]
+[WhiteType "human"]
+[BlackType "program"]
+
+1. e4 c5 2. Nc3 Nc6 3. Nf3 g6 4. Bc4 Nf6 {(g8f6 d2d3 e7e6 c1g5 f8e7 e1g1
+e8g8 e4e5 f6d5) -0.40/9 10} 5. e5 Ng4 {(f6g4 c4f7 e8f7) +0.10/11 10} 6. O-O
+Ngxe5 {(g4e5 f3e5 c6e5 c4b5 f8g7 f2f4 e5c6 d2d3 g7d4 g1h1 d7d5) +0.65/11
+10} 7. Nxe5 Nxe5 {(c6e5 c4b5 f8g7 d2d3 e8g8) +0.65/11 10} 8. Qe2 Nxc4
+{(e5c4 e2c4 e7e5 f2f4 f7f6 f4e5 f6e5 c4f7) +0.92/10 9} 9. Qxc4 e6 {(e7e6
+d2d4 d7d5 c4b3 a7a6 d4c5 f8c5 c1e3 c5d6) +0.95/9 9} 10. Re1 Be7 {(f8e7 d2d4
+d7d5 c4b5 c8d7 b5b7 c5d4 c3e2 e7c5) +1.05/9 9} 11. Ne4 O-O {(e8g8 c4c3 d7d6
+d2d4 f7f5 c1h6 f8e8 e4d2 c8d7) +1.40/9 9} 12. Nxc5 Qc7 {(d8c7 d2d4 b7b6
+c1h6 f8d8 b2b4 b6c5 b4c5 e7d6) +2.23/10 9} 13. d4 d6 {(d7d6 c1h6 f8d8 h6f4
+b7b6 b2b4 c8d7) +2.28/10 9} 14. Bf4 g5 {(g6g5 f4e3 d6c5 d4c5 e6e5) +2.53/10
+9} 15. Bg3 b6 {(b7b6 a1d1 b6c5 d4c5 c7c5) +2.65/10 9} 16. d5 bxc5 {(b6c5
+c2c3 e6d5 c4d5 c8e6 d5d3) +3.52/10 9} 17. dxe6 Bxe6 {(c8e6 c4e2 f8b8 c2c4
+e7f6 a1d1 b8b2 e2f3 c7d8) +3.55/10 8} 18. Rxe6 fxe6 {(f7e6 c4e6 f8f7 a1e1
+a8b8 b2b3 c7a5 e1e2) +4.40/11 8} 19. Qxe6+ Rf7 {(f8f7 f2f4 c7b7 a1b1)
++4.38/10 8} 20. h3 Rd8 {(a8d8 a1e1 c7b6 e6d5 g8g7 e1b1 g7f8 c2c4 d8e8)
++4.60/9 8} 21. a4 Qa5 {(c7a5 c2c3 a5b6 e6a2 d8b8 a1b1 b6b3 a2b3 b8b3)
++4.75/9 8} 22. c3 Qa6 {(a5a6 e6d5 a6e2) +4.75/9 8} 23. a5 Rb8 {(d8b8 a1a2)
++4.93/11 8} 24. Ra2 Qd3 {(a6d3 e6e1 e7f6 e1c1 b8e8 c1f1 d3c2 f1a1) +4.95/11
+8} 25. Kh2 Rd8 {(b8d8 e6e1 e7f6 h2g1) +5.05/9 8} 26. a6 Qb1 {(d3b1 e6b3
+h7h5 f2f3 h5h4 g3f2 e7f6 b3d5 f6e5 g2g3) +5.35/10 8} 27. Ra4 Qxb2 {(b1b2
+c3c4) +6.15/10 8} 28. Rg4 Qxc3 {(b2c3 f2f4) +6.35/10 8} 29. h4 h6 {(h7h6
+e6h6 f7h7 h6g6 g8h8 g6e4 c3a1 e4a4 a1f6 h2h3) +6.83/10 7} 30. Qxh6 Rh7
+{(f7h7 h6e6 g8h8 f2f4 g5h4 g3e1 c3a1 h2g1 c5c4 f4f5) +6.90/10 7} 31. Qe6+
+Kh8 {(g8h8 e6e3 c3f6) +6.90/11 7} 32. f4 gxh4 {(g5h4 g3e1 c3a1 e1f2 d8f8
+f2e3 a1d1 g4g6 d1b1) +6.95/11 7} 33. Bxh4 Bxh4 {(e7h4 g4h4 h7h4 h2g1 c3d4
+g1f1 h4f4 f1e1 d4f2 e1d1 f4d4) +23.20/11 7} 34. g3 Bxg3+ {(h4g3) +M3/8 7}
+35. Kg2 Rh2+ {(h7h2 g2g1 c3a1) +M2/8 7} 36. Kf1 Qa1+ {(c3a1 e6e1 a1e1)
++M1/8 7} 37. Qe1 Qxe1# {(a1e1) +M0/9 7} 0-1
+
+[Event "Computer chess game"]
+[Site "DESKTOP-GH6R4AR"]
+[Date "2024.05.02"]
+[Round "?"]
+[White "Marvel ENT"]
+[Black "Arora [001]"]
+[Result "*"]
+[BlackElo "2000"]
+[ECO "B00"]
+[Opening "King's Pawn"]
+[Time "14:13:45"]
+[WhiteElo "2400"]
+[TimeControl "300+6"]
+[Termination "unterminated"]
+[PlyCount "1"]
+[WhiteType "human"]
+[BlackType "program"]
+
+1. e4 *
+
+[Event "Computer chess game"]
+[Site "DESKTOP-GH6R4AR"]
+[Date "2024.05.02"]
+[Round "?"]
+[White "Arora [001]"]
+[Black "Arora [001]"]
+[Result "*"]
+[BlackElo "2000"]
+[Time "14:15:14"]
+[WhiteElo "2000"]
+[TimeControl "300+6"]
+[Termination "unterminated"]
+[PlyCount "0"]
+[WhiteType "program"]
+[BlackType "program"]
+
+ *
+
+[Event "Computer chess game"]
+[Site "DESKTOP-GH6R4AR"]
+[Date "2024.05.02"]
+[Round "?"]
+[White "Marvel ENT"]
+[Black "SOS 5.1 for Arena"]
+[Result "*"]
+[BlackElo "2000"]
+[Time "14:16:28"]
+[WhiteElo "2000"]
+[TimeControl "300+6"]
+[SetUp "1"]
+[FEN "rnbqkbnr/ppppp1pp/8/5p2/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 1"]
+[Termination "unterminated"]
+[PlyCount "0"]
+[WhiteType "human"]
+[BlackType "human"]
+
+ *
+

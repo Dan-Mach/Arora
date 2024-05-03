@@ -3,3 +3,4 @@ NAME = arora
 
 all: 
 	gcc $(SRCS) -o $(NAME) 
+ 

@@ -238,7 +238,7 @@ int EvalPosition(const C_board *pos) {
 		sq = pos->pList[pce][pceNum];
 		ASSERT(SqOnBoard(sq));
 		ASSERT(SQ64(sq)>=0 && SQ64(sq)<=63);
-		ASSERT(FileRankValid(FilesBrd[sq]));
+		ASSERT(FileRankValid(filesBrd[sq]));
 		if(!(pos->pawns[BOTH] & FileBBMask[filesBrd[sq]])) {
 			score += QueenOpenFile;
 		} else if(!(pos->pawns[WHITE] & FileBBMask[filesBrd[sq]])) {
@@ -251,7 +251,7 @@ int EvalPosition(const C_board *pos) {
 		sq = pos->pList[pce][pceNum];
 		ASSERT(SqOnBoard(sq));
 		ASSERT(SQ64(sq)>=0 && SQ64(sq)<=63);
-		ASSERT(FileRankValid(FilesBrd[sq]));
+		ASSERT(FileRankValid(filesBrd[sq]));
 		if(!(pos->pawns[BOTH] & FileBBMask[filesBrd[sq]])) {
 			score -= QueenOpenFile;
 		} else if(!(pos->pawns[BLACK] & FileBBMask[filesBrd[sq]])) {

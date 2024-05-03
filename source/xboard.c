@@ -100,7 +100,7 @@ void XBoard_Loop(C_board *pos, S_SEARCHINFO *info) {
 	int MB;
 
 	engineSide = BLACK;
-	ParseFen(START_FEN, pos);
+	parse_fen(START_FEN, pos);
 	depth = -1;
 	time = -1;
 
@@ -218,7 +218,7 @@ void XBoard_Loop(C_board *pos, S_SEARCHINFO *info) {
 		if(!strcmp(command, "new")) {
 			ClearHashTable(pos->HashTable);
 			engineSide = BLACK;
-			ParseFen(START_FEN, pos);
+			parse_fen(START_FEN, pos);
 			depth = -1;
 			time = -1;
 			continue;
@@ -226,7 +226,7 @@ void XBoard_Loop(C_board *pos, S_SEARCHINFO *info) {
 
 		if(!strcmp(command, "setboard")){
 			engineSide = BOTH;
-			ParseFen(inBuf+9, pos);
+			parse_fen(inBuf+9, pos);
 			continue;
 		}
 
@@ -248,7 +248,7 @@ void XBoard_Loop(C_board *pos, S_SEARCHINFO *info) {
 
 void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
 
-	printf("Welcome to Vice In Console Mode!\n");
+	printf("Welcome to Arora In Console Mode!\n");
 	printf("Type help for commands\n\n");
 
 	info->GAME_MODE = CONSOLEMODE;
@@ -262,7 +262,7 @@ void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
 	char inBuf[80], command[80];
 
 	engineSide = BLACK;
-	ParseFen(START_FEN, pos);
+	parse_fen(START_FEN, pos);
 
 	while(TRUE) {
 
@@ -280,7 +280,7 @@ void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
 			SearchPosition(pos, info);
 		}
 
-		printf("\nVice > ");
+		printf("\n Arora > ");
 
 		fflush(stdout);
 
@@ -316,17 +316,17 @@ void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
 		}
 
 		if(!strcmp(command, "eval")) {
-			PrintBoard(pos);
+			printBoard(pos);
 			printf("Eval:%d",EvalPosition(pos));
 			MirrorBoard(pos);
-			PrintBoard(pos);
+			printBoard(pos);
 			printf("Eval:%d",EvalPosition(pos));
 			continue;
 		}
 
 		if(!strcmp(command, "setboard")){
 			engineSide = BOTH;
-			ParseFen(inBuf+9, pos);
+			parse_fen(inBuf+9, pos);
 			continue;
 		}
 
@@ -341,7 +341,7 @@ void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
 		}
 
 		if(!strcmp(command, "print")) {
-			PrintBoard(pos);
+			printBoard(pos);
 			continue;
 		}
 
@@ -380,7 +380,7 @@ void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
 		if(!strcmp(command, "new")) {
 			ClearHashTable(pos->HashTable);
 			engineSide = BLACK;
-			ParseFen(START_FEN, pos);
+			parse_fen(START_FEN, pos);
 			continue;
 		}
 
