@@ -4,12 +4,12 @@
 #include "defs.h"
 #include "string.h"
 
-int ThreeFoldRep(const C_board *pos) {
+int ThreeFoldRep(const S_BOARD *pos) {
 
 	ASSERT(CheckBoard(pos));
 
 	int i = 0, r = 0;
-	for (i = 0; i < pos->hisply; ++i)	{
+	for (i = 0; i < pos->hisPly; ++i)	{
 	    if (pos->history[i].posKey == pos->posKey) {
 		    r++;
 		}
@@ -17,7 +17,7 @@ int ThreeFoldRep(const C_board *pos) {
 	return r;
 }
 
-int DrawMaterial(const C_board *pos) {
+int DrawMaterial(const S_BOARD *pos) {
 	ASSERT(CheckBoard(pos));
 
     if (pos->pceNum[wP] || pos->pceNum[bP]) return FALSE;
@@ -30,10 +30,10 @@ int DrawMaterial(const C_board *pos) {
     return TRUE;
 }
 
-int checkresult(C_board *pos) {
+int checkresult(S_BOARD *pos) {
 	ASSERT(CheckBoard(pos));
 
-    if (pos->fifty_Move > 100) {
+    if (pos->fiftyMove > 100) {
      printf("1/2-1/2 {fifty move rule (claimed by Arora)}\n"); return TRUE;
     }
 
@@ -81,7 +81,7 @@ void PrintOptions() {
 	printf("feature done=1\n");
 }
 
-void XBoard_Loop(C_board *pos, S_SEARCHINFO *info) {
+void XBoard_Loop(S_BOARD *pos, S_SEARCHINFO *info) {
 
 	info->GAME_MODE = XBOARDMODE;
 	info->POST_THINKING = TRUE;
@@ -100,7 +100,7 @@ void XBoard_Loop(C_board *pos, S_SEARCHINFO *info) {
 	int MB;
 
 	engineSide = BLACK;
-	parse_fen(START_FEN, pos);
+	ParseFen(START_FEN, pos);
 	depth = -1;
 	time = -1;
 
@@ -218,7 +218,7 @@ void XBoard_Loop(C_board *pos, S_SEARCHINFO *info) {
 		if(!strcmp(command, "new")) {
 			ClearHashTable(pos->HashTable);
 			engineSide = BLACK;
-			parse_fen(START_FEN, pos);
+			ParseFen(START_FEN, pos);
 			depth = -1;
 			time = -1;
 			continue;
@@ -226,7 +226,7 @@ void XBoard_Loop(C_board *pos, S_SEARCHINFO *info) {
 
 		if(!strcmp(command, "setboard")){
 			engineSide = BOTH;
-			parse_fen(inBuf+9, pos);
+			ParseFen(inBuf+9, pos);
 			continue;
 		}
 
@@ -246,7 +246,7 @@ void XBoard_Loop(C_board *pos, S_SEARCHINFO *info) {
 }
 
 
-void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
+void Console_Loop(S_BOARD *pos, S_SEARCHINFO *info) {
 
 	printf("Welcome to Arora In Console Mode!\n");
 	printf("Type help for commands\n\n");
@@ -262,7 +262,7 @@ void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
 	char inBuf[80], command[80];
 
 	engineSide = BLACK;
-	parse_fen(START_FEN, pos);
+	ParseFen(START_FEN, pos);
 
 	while(TRUE) {
 
@@ -280,7 +280,7 @@ void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
 			SearchPosition(pos, info);
 		}
 
-		printf("\n Arora > ");
+		printf("\nArora > ");
 
 		fflush(stdout);
 
@@ -316,17 +316,17 @@ void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
 		}
 
 		if(!strcmp(command, "eval")) {
-			printBoard(pos);
+			PrintBoard(pos);
 			printf("Eval:%d",EvalPosition(pos));
 			MirrorBoard(pos);
-			printBoard(pos);
+			PrintBoard(pos);
 			printf("Eval:%d",EvalPosition(pos));
 			continue;
 		}
 
 		if(!strcmp(command, "setboard")){
 			engineSide = BOTH;
-			parse_fen(inBuf+9, pos);
+			ParseFen(inBuf+9, pos);
 			continue;
 		}
 
@@ -341,7 +341,7 @@ void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
 		}
 
 		if(!strcmp(command, "print")) {
-			printBoard(pos);
+			PrintBoard(pos);
 			continue;
 		}
 
@@ -380,7 +380,7 @@ void Console_Loop(C_board *pos, S_SEARCHINFO *info) {
 		if(!strcmp(command, "new")) {
 			ClearHashTable(pos->HashTable);
 			engineSide = BLACK;
-			parse_fen(START_FEN, pos);
+			ParseFen(START_FEN, pos);
 			continue;
 		}
 

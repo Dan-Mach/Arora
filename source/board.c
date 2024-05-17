@@ -3,7 +3,7 @@
 #include "stdio.h"
 #include "defs.h"
 
-int PceListOk(const C_board *pos) {
+int PceListOk(const S_BOARD *pos) {
 	int pce = wP;
 	int sq;
 	int num;
@@ -13,17 +13,16 @@ int PceListOk(const C_board *pos) {
 
 	if(pos->pceNum[wK]!=1 || pos->pceNum[bK]!=1) return FALSE;
 
-	/*for(pce = wP; pce <= bK; ++pce) {
+	for(pce = wP; pce <= bK; ++pce) {
 		for(num = 0; num < pos->pceNum[pce]; ++num) {
 			sq = pos->pList[pce][num];
 			if(!SqOnBoard(sq)) return FALSE;
 		}
-	}*/
-	
+	}
     return TRUE;
 }
 
-int CheckBoard(const C_board *pos) {
+int CheckBoard(const S_BOARD *pos) {
 
 	int t_pceNum[13] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	int t_bigPce[2] = { 0, 0};
@@ -52,12 +51,12 @@ int CheckBoard(const C_board *pos) {
 		sq120 = SQ120(sq64);
 		t_piece = pos->pieces[sq120];
 		t_pceNum[t_piece]++;
-		colour = pieceCol[t_piece];
-		if( pieceBig[t_piece] == TRUE) t_bigPce[colour]++;
-		if( pieceMin[t_piece] == TRUE) t_minPce[colour]++;
-		if( pieceMaj[t_piece] == TRUE) t_majPce[colour]++;
+		colour = PieceCol[t_piece];
+		if( PieceBig[t_piece] == TRUE) t_bigPce[colour]++;
+		if( PieceMin[t_piece] == TRUE) t_minPce[colour]++;
+		if( PieceMaj[t_piece] == TRUE) t_majPce[colour]++;
 
-		t_material[colour] += pieceVal[t_piece];
+		t_material[colour] += PieceVal[t_piece];
 	}
 
 	for(t_piece = wP; t_piece <= bK; ++t_piece) {
@@ -109,7 +108,7 @@ int CheckBoard(const C_board *pos) {
 	return TRUE;
 }
 
-void UpdateListsMaterial(C_board *pos) {
+void UpdateListsMaterial(S_BOARD *pos) {
 
 	int piece,sq,index,colour;
 
@@ -118,14 +117,14 @@ void UpdateListsMaterial(C_board *pos) {
 		piece = pos->pieces[index];
 		ASSERT(PceValidEmptyOffbrd(piece));
 		if(piece!=OFFBOARD && piece!= EMPTY) {
-			colour = pieceCol[piece];
+			colour = PieceCol[piece];
 			ASSERT(SideValid(colour));
 
-		    if( pieceBig[piece] == TRUE) pos->bigPce[colour]++;
-		    if( pieceMin[piece] == TRUE) pos->minPce[colour]++;
-		    if( pieceMaj[piece] == TRUE) pos->majPce[colour]++;
+		    if( PieceBig[piece] == TRUE) pos->bigPce[colour]++;
+		    if( PieceMin[piece] == TRUE) pos->minPce[colour]++;
+		    if( PieceMaj[piece] == TRUE) pos->majPce[colour]++;
 
-			pos->material[colour] += pieceVal[piece];
+			pos->material[colour] += PieceVal[piece];
 
 			ASSERT(pos->pceNum[piece] < 10 && pos->pceNum[piece] >= 0);
 
@@ -147,13 +146,13 @@ void UpdateListsMaterial(C_board *pos) {
 	}
 }
 
-int parse_fen(char *fen, C_board *pos) {
+int ParseFen(char *fen, S_BOARD *pos) {
 
 	ASSERT(fen!=NULL);
 	ASSERT(pos!=NULL);
 
-	int  rank = rank_8;
-    int  file = file_A;
+	int  rank = RANK_8;
+    int  file = FILE_A;
     int  piece = 0;
     int  count = 0;
     int  i = 0;
@@ -162,7 +161,7 @@ int parse_fen(char *fen, C_board *pos) {
 
 	ResetBoard(pos);
 
-	while ((rank >= rank_1) && *fen) {
+	while ((rank >= RANK_1) && *fen) {
 	    count = 1;
 		switch (*fen) {
             case 'p': piece = bP; break;
@@ -193,7 +192,7 @@ int parse_fen(char *fen, C_board *pos) {
             case '/':
             case ' ':
                 rank--;
-                file = file_A;
+                file = FILE_A;
                 fen++;
                 continue;
 
@@ -239,10 +238,10 @@ int parse_fen(char *fen, C_board *pos) {
 		file = fen[0] - 'a';
 		rank = fen[1] - '1';
 
-		ASSERT(file>=file_A && file <= file_H);
-		ASSERT(rank>=rank_1 && rank <= rank_8);
+		ASSERT(file>=FILE_A && file <= FILE_H);
+		ASSERT(rank>=RANK_1 && rank <= RANK_8);
 
-		pos->enPass = FR2SQ(file,rank);
+		pos->enPas = FR2SQ(file,rank);
     }
 
 	pos->posKey = GeneratePosKey(pos);
@@ -252,7 +251,7 @@ int parse_fen(char *fen, C_board *pos) {
 	return 0;
 }
 
-void ResetBoard(C_board *pos) {
+void ResetBoard(S_BOARD *pos) {
 
 	int index = 0;
 
@@ -282,40 +281,40 @@ void ResetBoard(C_board *pos) {
 	pos->KingSq[WHITE] = pos->KingSq[BLACK] = NO_SQ;
 
 	pos->side = BOTH;
-	pos->enPass = NO_SQ;
-	pos->fifty_Move = 0;
+	pos->enPas = NO_SQ;
+	pos->fiftyMove = 0;
 
 	pos->ply = 0;
-	pos->hisply = 0;
+	pos->hisPly = 0;
 
 	pos->castlePerm = 0;
 
 	pos->posKey = 0ULL;
 
 }
-void printBoard(const C_board *pos) {
+void PrintBoard(const S_BOARD *pos) {
 
 	int sq,file,rank,piece;
 
 	printf("\nGame Board:\n\n");
 
-	for(rank = rank_8; rank >= rank_1; rank--) {
+	for(rank = RANK_8; rank >= RANK_1; rank--) {
 		printf("%d  ",rank+1);
-		for(file = file_A; file <= file_H; file++) {
+		for(file = FILE_A; file <= FILE_H; file++) {
 			sq = FR2SQ(file,rank);
 			piece = pos->pieces[sq];
-			printf("%3c",pceChar[piece]);
+			printf("%3c",PceChar[piece]);
 		}
 		printf("\n");
 	}
 
 	printf("\n   ");
-	for(file = file_A; file <= file_H; file++) {
+	for(file = FILE_A; file <= FILE_H; file++) {
 		printf("%3c",'a'+file);
 	}
 	printf("\n");
-	printf("side:%c\n",sideChar[pos->side]);
-	printf("enPas:%d\n",pos->enPass);
+	printf("side:%c\n",SideChar[pos->side]);
+	printf("enPas:%d\n",pos->enPas);
 	printf("castle:%c%c%c%c\n",
 			pos->castlePerm & WKCA ? 'K' : '-',
 			pos->castlePerm & WQCA ? 'Q' : '-',
@@ -325,7 +324,7 @@ void printBoard(const C_board *pos) {
 	printf("PosKey:%llX\n",pos->posKey);
 }
 
-void MirrorBoard(C_board *pos) {
+void MirrorBoard(S_BOARD *pos) {
 
     int tempPiecesArray[64];
     int tempSide = pos->side^1;
@@ -342,8 +341,8 @@ void MirrorBoard(C_board *pos) {
     if (pos->castlePerm & BKCA) tempCastlePerm |= WKCA;
     if (pos->castlePerm & BQCA) tempCastlePerm |= WQCA;
 
-	if (pos->enPass != NO_SQ)  {
-        tempEnPas = SQ120(Mirror64[SQ64(pos->enPass)]);
+	if (pos->enPas != NO_SQ)  {
+        tempEnPas = SQ120(Mirror64[SQ64(pos->enPas)]);
     }
 
     for (sq = 0; sq < 64; sq++) {
@@ -359,7 +358,7 @@ void MirrorBoard(C_board *pos) {
 
 	pos->side = tempSide;
     pos->castlePerm = tempCastlePerm;
-    pos->enPass = tempEnPas;
+    pos->enPas = tempEnPas;
 
     pos->posKey = GeneratePosKey(pos);
 

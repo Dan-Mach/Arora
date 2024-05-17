@@ -7,7 +7,7 @@
 #include "windows.h"
 #else
 #include "sys/time.h"
-#include <sys/select.h>
+#include "sys/select.h"
 #include "unistd.h"
 #include "string.h"
 #endif
@@ -60,13 +60,13 @@ int InputWaiting()
 }
 
 void ReadInput(S_SEARCHINFO *info) {
-  int             bytes;
-  char            input[256] = "", *endc;
+    int bytes;
+    char input[256] = "", *endc;
 
-    if (InputWaiting()) {
-		info->stopped = TRUE;
-		do {
-		  bytes= read(fileno(stdin),input,256);
+      if (InputWaiting()) {
+		    info->stopped = TRUE;
+		    do {
+		  bytes=read(fileno(stdin),input,256);
 		} while (bytes<0);
 		endc = strchr(input,'\n');
 		if (endc) *endc=0;

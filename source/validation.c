@@ -1,9 +1,10 @@
+// validate.c
 
 #include "defs.h"
 #include "stdio.h"
 #include "string.h"
 
-int MoveListOk(const S_MOVELIST *list,  const C_board *pos) {
+int MoveListOk(const S_MOVELIST *list,  const S_BOARD *pos) {
 	if(list->count < 0 || list->count >= MAXPOSITIONMOVES) {
 		return FALSE;
 	}
@@ -18,7 +19,7 @@ int MoveListOk(const S_MOVELIST *list,  const C_board *pos) {
 			return FALSE;
 		}
 		if(!PieceValid(pos->pieces[from])) {
-			printBoard(pos);
+			PrintBoard(pos);
 			return FALSE;
 		}
 	}
@@ -34,7 +35,7 @@ int PceValidEmptyOffbrd(const int pce) {
 	return (PieceValidEmpty(pce) || pce == OFFBOARD);
 }
 int SqOnBoard(const int sq) {
-	return filesBrd[sq]==OFFBOARD ? 0 : 1;
+	return FilesBrd[sq]==OFFBOARD ? 0 : 1;
 }
 
 int SideValid(const int side) {
@@ -53,7 +54,7 @@ int PieceValid(const int pce) {
 	return (pce >= wP && pce <= bK) ? 1 : 0;
 }
 
-/*void DebugAnalysisTest(C_board *pos, S_SEARCHINFO *info) {
+void DebugAnalysisTest(S_BOARD *pos, S_SEARCHINFO *info) {
 
 	FILE *file;
     file = fopen("lct2.epd","r");
@@ -72,7 +73,7 @@ int PieceValid(const int pce) {
 			info->starttime = GetTimeMs();
 			info->stoptime = info->starttime + time;
 			ClearHashTable(pos->HashTable);
-            parse_fen(lineIn, pos);
+            ParseFen(lineIn, pos);
             printf("\n%s\n",lineIn);
 			printf("time:%d start:%d stop:%d depth:%d timeset:%d\n",
 				time,info->starttime,info->stoptime,info->depth,info->timeset);
@@ -81,10 +82,10 @@ int PieceValid(const int pce) {
         }
     }
 }
-*/
 
 
-void MirrorEvalTest(C_board *pos) {
+
+void MirrorEvalTest(S_BOARD *pos) {
     FILE *file;
     file = fopen("mirror.epd","r");
     char lineIn [1024];
@@ -95,7 +96,7 @@ void MirrorEvalTest(C_board *pos) {
         return;
     }  else {
         while(fgets (lineIn , 1024 , file) != NULL) {
-            parse_fen(lineIn, pos);
+            ParseFen(lineIn, pos);
             positions++;
             ev1 = EvalPosition(pos);
             MirrorBoard(pos);
@@ -103,10 +104,10 @@ void MirrorEvalTest(C_board *pos) {
 
             if(ev1 != ev2) {
                 printf("\n\n\n");
-                parse_fen(lineIn, pos);
-                printBoard(pos);
+                ParseFen(lineIn, pos);
+                PrintBoard(pos);
                 MirrorBoard(pos);
-                printBoard(pos);
+                PrintBoard(pos);
                 printf("\n\nMirror Fail:\n%s\n",lineIn);
                 getchar();
                 return;
@@ -120,3 +121,4 @@ void MirrorEvalTest(C_board *pos) {
         }
     }
 }
+

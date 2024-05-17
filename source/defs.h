@@ -244,6 +244,7 @@ extern void printBoard(const C_board *pos);
 extern void UpdateListsMaterial (C_board *pos);
 extern int CheckBoard(const C_board *pos);
 extern void MirrorBoard( C_board *pos);
+extern int PceListOk(const C_board* pos);
 
 //hashKey.c
 extern U64 GeneratePosKey (const C_board *pos);
@@ -251,7 +252,7 @@ extern U64 GeneratePosKey (const C_board *pos);
 //attack.c
 extern int SqAttacked(const int sq, const int side, const C_board *pos);
 
-/*
+
 // io.c
 extern char *PrMove(const int move);
 extern char *PrSq(const int sq);
@@ -307,6 +308,7 @@ extern void MirrorEvalTest(C_board *pos) ;
 
 // uci.c
 extern void Uci_Loop(C_board *pos, S_SEARCHINFO *info);
+extern void ParseGo(char* line, S_SEARCHINFO* info, C_board* pos);
 
 // xboard.c
 extern void XBoard_Loop(C_board *pos, S_SEARCHINFO *info);
@@ -317,17 +319,11 @@ extern int GetBookMove(C_board *board);
 extern void CleanPolyBook();
 extern void InitPolyBook() ;
 
-
-
-
-
-
-
-*/
-//bit board
+//bitboard.c
 extern void PrintBitBoard (U64 bb);
 extern int popBit( U64 *bb);
 extern int countBit(U64 b);
+
 
 //init.c
 extern void Allinit();
