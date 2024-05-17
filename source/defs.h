@@ -204,9 +204,6 @@ extern char pceChar[];
 extern char sideChar[];
 extern char fileChar[];
 extern char rankChar[];
-extern int fileBrd[BRD_SQ_NUM];
-extern int rankBrd[BRD_SQ_NUM];
-
 
 //boolean
 extern int pieceBig[13];
@@ -254,6 +251,7 @@ extern U64 GeneratePosKey (const C_board *pos);
 //attack.c
 extern int SqAttacked(const int sq, const int side, const C_board *pos);
 
+/*
 // io.c
 extern char *PrMove(const int move);
 extern char *PrSq(const int sq);
@@ -318,13 +316,20 @@ extern void Console_Loop(C_board *pos, S_SEARCHINFO *info);
 extern int GetBookMove(C_board *board);
 extern void CleanPolyBook();
 extern void InitPolyBook() ;
-//init.c
-extern void Allinit();
 
+
+
+
+
+
+
+*/
 //bit board
 extern void PrintBitBoard (U64 bb);
 extern int popBit( U64 *bb);
 extern int countBit(U64 b);
 
-#endif
+//init.c
+extern void Allinit();
 
+#endif
