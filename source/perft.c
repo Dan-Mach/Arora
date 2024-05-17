@@ -5,7 +5,7 @@
 
 long leafNodes;
 
-void Perft(int depth, C_board *pos) {
+void Perft(int depth, S_BOARD *pos) {
 
     ASSERT(CheckBoard(pos));  
 
@@ -31,11 +31,11 @@ void Perft(int depth, C_board *pos) {
 }
 
 
-void PerftTest(int depth, C_board *pos) {
+void PerftTest(int depth, S_BOARD *pos) {
 
     ASSERT(CheckBoard(pos));
 
-	printBoard(pos);
+	PrintBoard(pos);
 	printf("\nStarting Test To Depth:%d\n",depth);	
 	leafNodes = 0;
 	int start = GetTimeMs();

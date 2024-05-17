@@ -7,8 +7,8 @@ char *PrSq(const int sq) {
 
 	static char SqStr[3];
 
-	int file = filesBrd[sq];
-	int rank = ranksBrd[sq];
+	int file = FilesBrd[sq];
+	int rank = RanksBrd[sq];
 
 	sprintf(SqStr, "%c%c", ('a'+file), ('1'+rank));
 
@@ -20,10 +20,10 @@ char *PrMove(const int move) {
 
 	static char MvStr[6];
 
-	int ff = filesBrd[FROMSQ(move)];
-	int rf = ranksBrd[FROMSQ(move)];
-	int ft = filesBrd[TOSQ(move)];
-	int rt = ranksBrd[TOSQ(move)];
+	int ff = FilesBrd[FROMSQ(move)];
+	int rf = RanksBrd[FROMSQ(move)];
+	int ft = FilesBrd[TOSQ(move)];
+	int rt = RanksBrd[TOSQ(move)];
 
 	int promoted = PROMOTED(move);
 
@@ -44,7 +44,7 @@ char *PrMove(const int move) {
 	return MvStr;
 }
 
-int ParseMove(char *ptrChar, C_board *pos) {
+int ParseMove(char *ptrChar, S_BOARD *pos) {
 
 	ASSERT(CheckBoard(pos));
 
@@ -71,14 +71,11 @@ int ParseMove(char *ptrChar, C_board *pos) {
 			if(PromPce!=EMPTY) {
 				if(IsRQ(PromPce) && !IsBQ(PromPce) && ptrChar[4]=='r') {
 					return Move;
-				} 
-				else if(!IsRQ(PromPce) && IsBQ(PromPce) && ptrChar[4]=='b') {
+				} else if(!IsRQ(PromPce) && IsBQ(PromPce) && ptrChar[4]=='b') {
 					return Move;
-				} 
-				else if(IsRQ(PromPce) && IsBQ(PromPce) && ptrChar[4]=='q') {
+				} else if(IsRQ(PromPce) && IsBQ(PromPce) && ptrChar[4]=='q') {
 					return Move;
-				} 
-				else if(IsKn(PromPce)&& ptrChar[4]=='n') {
+				} else if(IsKn(PromPce)&& ptrChar[4]=='n') {
 					return Move;
 				}
 				continue;

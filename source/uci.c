@@ -1,4 +1,3 @@
-
 // uci.c
 
 #include "stdio.h"
@@ -8,7 +7,7 @@
 #define INPUTBUFFER 400 * 6
 
 // go depth 6 wtime 180000 btime 100000 binc 1000 winc 1000 movetime 1000 movestogo 40
-void ParseGo(char* line, S_SEARCHINFO *info, C_board *pos) {
+void ParseGo(char* line, S_SEARCHINFO *info, S_BOARD *pos) {
 
 	int depth = -1, movestogo = 30,movetime = -1;
 	int time = -1, inc = 0;
@@ -74,20 +73,20 @@ void ParseGo(char* line, S_SEARCHINFO *info, C_board *pos) {
 // position fen fenstr
 // position startpos
 // ... moves e2e4 e7e5 b7b8q
-void ParsePosition(char* lineIn, C_board *pos) {
+void ParsePosition(char* lineIn, S_BOARD *pos) {
 
 	lineIn += 9;
     char *ptrChar = lineIn;
 
     if(strncmp(lineIn, "startpos", 8) == 0){
-        parse_fen(START_FEN, pos);
+        ParseFen(START_FEN, pos);
     } else {
         ptrChar = strstr(lineIn, "fen");
         if(ptrChar == NULL) {
-            parse_fen(START_FEN, pos);
+            ParseFen(START_FEN, pos);
         } else {
             ptrChar+=4;
-            parse_fen(ptrChar, pos);
+            ParseFen(ptrChar, pos);
         }
     }
 
@@ -105,10 +104,10 @@ void ParsePosition(char* lineIn, C_board *pos) {
               ptrChar++;
         }
     }
-	printBoard(pos);
+	PrintBoard(pos);
 }
 
-void Uci_Loop(C_board *pos, S_SEARCHINFO *info) {
+void Uci_Loop(S_BOARD *pos, S_SEARCHINFO *info) {
 
 	info->GAME_MODE = UCIMODE;
 
@@ -148,7 +147,7 @@ void Uci_Loop(C_board *pos, S_SEARCHINFO *info) {
             break;
         } else if (!strncmp(line, "uci", 3)) {
             printf("id name %s\n",NAME);
-            printf("id author Dimar\n");
+            printf("id author Bluefever\n");
             printf("uciok\n");
         } else if (!strncmp(line, "debug", 4)) {
             DebugAnalysisTest(pos,info);
@@ -171,3 +170,4 @@ void Uci_Loop(C_board *pos, S_SEARCHINFO *info) {
 		if(info->quit) break;
     }
 }
+

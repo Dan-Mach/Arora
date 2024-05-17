@@ -1,3 +1,4 @@
+// search.c
 
 #include "stdio.h"
 #include "defs.h"
@@ -37,11 +38,11 @@ static void PickNextMove(int moveNum, S_MOVELIST *list) {
 	list->moves[bestNum] = temp;
 }
 
-static int IsRepetition(const C_board *pos) {
+static int IsRepetition(const S_BOARD *pos) {
 
 	int index = 0;
 
-	for(index = pos->hisply - pos->fifty_Move; index < pos->hisply-1; ++index) {
+	for(index = pos->hisPly - pos->fiftyMove; index < pos->hisPly-1; ++index) {
 		ASSERT(index >= 0 && index < MAXGAMEMOVES);
 		if(pos->posKey == pos->history[index].posKey) {
 			return TRUE;
@@ -50,7 +51,7 @@ static int IsRepetition(const C_board *pos) {
 	return FALSE;
 }
 
-static void ClearForSearch(C_board *pos, S_SEARCHINFO *info) {
+static void ClearForSearch(S_BOARD *pos, S_SEARCHINFO *info) {
 
 	int index = 0;
 	int index2 = 0;
@@ -78,7 +79,7 @@ static void ClearForSearch(C_board *pos, S_SEARCHINFO *info) {
 	info->fhf = 0;
 }
 
-static int Quiescence(int alpha, int beta, C_board *pos, S_SEARCHINFO *info) {
+static int Quiescence(int alpha, int beta, S_BOARD *pos, S_SEARCHINFO *info) {
 
 	ASSERT(CheckBoard(pos));
 	ASSERT(beta>alpha);
@@ -88,7 +89,7 @@ static int Quiescence(int alpha, int beta, C_board *pos, S_SEARCHINFO *info) {
 
 	info->nodes++;
 
-	if(IsRepetition(pos) || pos->fifty_Move >= 100) {
+	if(IsRepetition(pos) || pos->fiftyMove >= 100) {
 		return 0;
 	}
 
@@ -148,7 +149,7 @@ static int Quiescence(int alpha, int beta, C_board *pos, S_SEARCHINFO *info) {
 	return alpha;
 }
 
-static int AlphaBeta(int alpha, int beta, int depth, C_board *pos, S_SEARCHINFO *info, int DoNull) {
+static int AlphaBeta(int alpha, int beta, int depth, S_BOARD *pos, S_SEARCHINFO *info, int DoNull) {
 
 	ASSERT(CheckBoard(pos));
 	ASSERT(beta>alpha);
@@ -165,7 +166,7 @@ static int AlphaBeta(int alpha, int beta, int depth, C_board *pos, S_SEARCHINFO 
 
 	info->nodes++;
 
-	if((IsRepetition(pos) || pos->fifty_Move >= 100) && pos->ply) {
+	if((IsRepetition(pos) || pos->fiftyMove >= 100) && pos->ply) {
 		return 0;
 	}
 
@@ -285,7 +286,7 @@ static int AlphaBeta(int alpha, int beta, int depth, C_board *pos, S_SEARCHINFO 
 	return alpha;
 }
 
-void SearchPosition(C_board *pos, S_SEARCHINFO *info) {
+void SearchPosition(S_BOARD *pos, S_SEARCHINFO *info) {
 
 	int bestMove = NOMOVE;
 	int bestScore = -INFINITE;
@@ -346,9 +347,9 @@ void SearchPosition(C_board *pos, S_SEARCHINFO *info) {
 		printf("move %s\n",PrMove(bestMove));
 		MakeMove(pos, bestMove);
 	} else {
-		printf("\n\n***!! Vice makes move %s !!***\n\n",PrMove(bestMove));
+		printf("\n\n***!! Arora makes move %s !!***\n\n",PrMove(bestMove));
 		MakeMove(pos, bestMove);
-		printBoard(pos);
+		PrintBoard(pos);
 	}
 
 }

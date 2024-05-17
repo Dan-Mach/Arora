@@ -69,11 +69,11 @@ Website=
 E-Mail=
 ArenaVersion=Arena 3.5.1
 [PairingResults]
-SOS 5.1 for Arena ------ Vice=½
-Hermann 2.8 32 bit ------ Vice=?
-Rybka 2.3.2a 64 bit ------ Vice=?
+SOS 5.1 for Arena ------ Arora=ï¿½
+Hermann 2.8 32 bit ------ Arora=?
+Rybka 2.3.2a 64 bit ------ Arora=?
 [Participants]
-Engine1=Vice
+Engine1=Arora
 Engine2=Rybka 2.3.2a 64 bit
 Engine3=Ruffian 1.0.5
 Engine4=Hermann 2.8 32 bit

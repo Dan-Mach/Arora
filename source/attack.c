@@ -1,5 +1,6 @@
+// attack.c
 
-#include <stdio.h>
+#include "stdio.h"
 #include "defs.h"
 
 const int KnDir[8] = { -8, -19,	-21, -12, 8, 19, 21, 12 };
@@ -7,7 +8,7 @@ const int RkDir[4] = { -1, -10,	1, 10 };
 const int BiDir[4] = { -9, -11, 11, 9 };
 const int KiDir[8] = { -1, -10,	1, 10, -9, -11, 11, 9 };
 
-int SqAttacked(const int sq, const int side, const C_board *pos) {
+int SqAttacked(const int sq, const int side, const S_BOARD *pos) {
 
 	int pce,index,t_sq,dir;
 	
@@ -30,7 +31,7 @@ int SqAttacked(const int sq, const int side, const C_board *pos) {
 	for(index = 0; index < 8; ++index) {		
 		pce = pos->pieces[sq + KnDir[index]];
 		ASSERT(PceValidEmptyOffbrd(pce));
-		if(pce != OFFBOARD && IsKn(pce) && pieceCol[pce]==side) {
+		if(pce != OFFBOARD && IsKn(pce) && PieceCol[pce]==side) {
 			return TRUE;
 		}
 	}
@@ -44,7 +45,7 @@ int SqAttacked(const int sq, const int side, const C_board *pos) {
 		ASSERT(PceValidEmptyOffbrd(pce));
 		while(pce != OFFBOARD) {
 			if(pce != EMPTY) {
-				if(IsRQ(pce) && pieceCol[pce] == side) {
+				if(IsRQ(pce) && PieceCol[pce] == side) {
 					return TRUE;
 				}
 				break;
@@ -64,7 +65,7 @@ int SqAttacked(const int sq, const int side, const C_board *pos) {
 		ASSERT(PceValidEmptyOffbrd(pce));
 		while(pce != OFFBOARD) {
 			if(pce != EMPTY) {
-				if(IsBQ(pce) && pieceCol[pce] == side) {
+				if(IsBQ(pce) && PieceCol[pce] == side) {
 					return TRUE;
 				}
 				break;
@@ -79,7 +80,7 @@ int SqAttacked(const int sq, const int side, const C_board *pos) {
 	for(index = 0; index < 8; ++index) {		
 		pce = pos->pieces[sq + KiDir[index]];
 		ASSERT(PceValidEmptyOffbrd(pce));
-		if(pce != OFFBOARD && IsKi(pce) && pieceCol[pce]==side) {
+		if(pce != OFFBOARD && IsKi(pce) && PieceCol[pce]==side) {
 			return TRUE;
 		}
 	}

@@ -204,9 +204,6 @@ extern char pceChar[];
 extern char sideChar[];
 extern char fileChar[];
 extern char rankChar[];
-extern int fileBrd[BRD_SQ_NUM];
-extern int rankBrd[BRD_SQ_NUM];
-
 
 //boolean
 extern int pieceBig[13];
@@ -214,11 +211,12 @@ extern int pieceMaj[13];
 extern int pieceMin[13];
 extern int pieceVal[13];
 extern int pieceCol[13];
-extern int piecePawn[13];
+
 
 extern int filesBrd[BRD_SQ_NUM];
 extern int ranksBrd[BRD_SQ_NUM];
 
+extern int piecePawn[13];
 extern int pieceKnight[13];
 extern int pieceKing[13];
 extern int pieceRookQueen[13];
@@ -243,15 +241,17 @@ extern S_OPTIONS EngineOptions[1];
 extern  void ResetBoard( C_board *pos);
 extern int parse_fen( char *fen, C_board *pos);
 extern void printBoard(const C_board *pos);
-extern void UpdatelistsMaterial (C_board *pos);
+extern void UpdateListsMaterial (C_board *pos);
 extern int CheckBoard(const C_board *pos);
 extern void MirrorBoard( C_board *pos);
+extern int PceListOk(const C_board* pos);
 
 //hashKey.c
 extern U64 GeneratePosKey (const C_board *pos);
 
 //attack.c
 extern int SqAttacked(const int sq, const int side, const C_board *pos);
+
 
 // io.c
 extern char *PrMove(const int move);
@@ -308,6 +308,7 @@ extern void MirrorEvalTest(C_board *pos) ;
 
 // uci.c
 extern void Uci_Loop(C_board *pos, S_SEARCHINFO *info);
+extern void ParseGo(char* line, S_SEARCHINFO* info, C_board* pos);
 
 // xboard.c
 extern void XBoard_Loop(C_board *pos, S_SEARCHINFO *info);
@@ -317,13 +318,14 @@ extern void Console_Loop(C_board *pos, S_SEARCHINFO *info);
 extern int GetBookMove(C_board *board);
 extern void CleanPolyBook();
 extern void InitPolyBook() ;
-//init.c
-extern void Allinit();
 
-//bit board
+//bitboard.c
 extern void PrintBitBoard (U64 bb);
 extern int popBit( U64 *bb);
 extern int countBit(U64 b);
 
-#endif
 
+//init.c
+extern void Allinit();
+
+#endif
