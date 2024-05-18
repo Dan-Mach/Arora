@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
 
 	AllInit();
 
-	S_board pos[1];
+	S_BOARD pos[1];
     S_SEARCHINFO info[1];
     info->quit = FALSE;
 	pos->HashTable->pTable = NULL;
