@@ -129,7 +129,7 @@ typedef struct {
     int searchKillers[2][MAXDEPTH];
 
 
-}C_board;
+}S_board;
 
 typedef struct {
 
@@ -238,26 +238,26 @@ extern S_OPTIONS EngineOptions[1];
 /*functions*/
 
 //board.c
-extern  void ResetBoard( C_board *pos);
-extern int parse_fen( char *fen, C_board *pos);
-extern void printBoard(const C_board *pos);
-extern void UpdateListsMaterial (C_board *pos);
-extern int CheckBoard(const C_board *pos);
-extern void MirrorBoard( C_board *pos);
-extern int PceListOk(const C_board* pos);
+extern  void ResetBoard( S *pos);
+extern int parse_fen( char *fen, S *pos);
+extern void printBoard(const S *pos);
+extern void UpdateListsMaterial (S *pos);
+extern int CheckBoard(const S *pos);
+extern void MirrorBoard( S *pos);
+extern int PceListOk(const S* pos);
 
 //hashKey.c
-extern U64 GeneratePosKey (const C_board *pos);
+extern U64 GeneratePosKey (const S *pos);
 
 //attack.c
-extern int SqAttacked(const int sq, const int side, const C_board *pos);
+extern int SqAttacked(const int sq, const int side, const S *pos);
 
 
 // io.c
 extern char *PrMove(const int move);
 extern char *PrSq(const int sq);
 extern void PrintMoveList(const S_MOVELIST *list);
-extern int ParseMove(char *ptrChar, C_board *pos);
+extern int ParseMove(char *ptrChar, S *pos);
 
 
 //validate.c
@@ -266,29 +266,29 @@ extern int SideValid(const int side);
 extern int FileRankValid(const int fr);
 extern int PieceValidEmpty(const int pce);
 extern int PieceValid(const int pce);
-extern void MirrorEvalTest(C_board *pos);
+extern void MirrorEvalTest(S *pos);
 extern int SqIs120(const int sq);
 extern int PceValidEmptyOffbrd(const int pce);
-extern int MoveListOk(const S_MOVELIST *list,  const C_board *pos);
-extern void DebugAnalysisTest(C_board *pos, S_SEARCHINFO *info);
+extern int MoveListOk(const S_MOVELIST *list,  const S *pos);
+extern void DebugAnalysisTest(S *pos, S_SEARCHINFO *info);
 
 // movegen.c
-extern void GenerateAllMoves(const C_board *pos, S_MOVELIST *list);
-extern void GenerateAllCaps(const C_board *pos, S_MOVELIST *list);
-extern int MoveExists(C_board *pos, const int move);
+extern void GenerateAllMoves(const S *pos, S_MOVELIST *list);
+extern void GenerateAllCaps(const S *pos, S_MOVELIST *list);
+extern int MoveExists(S *pos, const int move);
 extern void InitMvvLva();
 
 // makemove.c
-extern int MakeMove(C_board *pos, int move);
-extern void TakeMove(C_board *pos);
-extern void MakeNullMove(C_board *pos);
-extern void TakeNullMove(C_board *pos);
+extern int MakeMove(S *pos, int move);
+extern void TakeMove(S *pos);
+extern void MakeNullMove(S *pos);
+extern void TakeNullMove(S *pos);
 
 // perft.c
-extern void PerftTest(int depth, C_board *pos);
+extern void PerftTest(int depth, S *pos);
 
 // search.c
-extern void SearchPosition(C_board *pos, S_SEARCHINFO *info);
+extern void SearchPosition(S *pos, S_SEARCHINFO *info);
 
 // misc.c
 extern int GetTimeMs();
@@ -296,26 +296,26 @@ extern void ReadInput(S_SEARCHINFO *info);
 
 // pvtable.c
 extern void InitHashTable(S_HASHTABLE *table, const int MB);
-extern void StoreHashEntry(C_board *pos, const int move, int score, const int flags, const int depth);
-extern int ProbeHashEntry(C_board *pos, int *move, int *score, int alpha, int beta, int depth);
-extern int ProbePvMove(const C_board *pos);
-extern int GetPvLine(const int depth, C_board *pos);
+extern void StoreHashEntry(S *pos, const int move, int score, const int flags, const int depth);
+extern int ProbeHashEntry(S *pos, int *move, int *score, int alpha, int beta, int depth);
+extern int ProbePvMove(const S *pos);
+extern int GetPvLine(const int depth, S *pos);
 extern void ClearHashTable(S_HASHTABLE *table);
 
 // evaluate.c
-extern int EvalPosition(const C_board *pos);
-extern void MirrorEvalTest(C_board *pos) ;
+extern int EvalPosition(const S *pos);
+extern void MirrorEvalTest(S *pos) ;
 
 // uci.c
-extern void Uci_Loop(C_board *pos, S_SEARCHINFO *info);
-extern void ParseGo(char* line, S_SEARCHINFO* info, C_board* pos);
+extern void Uci_Loop(S *pos, S_SEARCHINFO *info);
+extern void ParseGo(char* line, S_SEARCHINFO* info, S* pos);
 
 // xboard.c
-extern void XBoard_Loop(C_board *pos, S_SEARCHINFO *info);
-extern void Console_Loop(C_board *pos, S_SEARCHINFO *info);
+extern void XBoard_Loop(S *pos, S_SEARCHINFO *info);
+extern void Console_Loop(S *pos, S_SEARCHINFO *info);
 
 // polybook.c
-extern int GetBookMove(C_board *board);
+extern int GetBookMove(S *board);
 extern void CleanPolyBook();
 extern void InitPolyBook() ;
 

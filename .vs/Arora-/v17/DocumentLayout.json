@@ -3,64 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\movegen.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\movegen.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\polybook.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\polybook.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\arora.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\arora.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\defs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\defs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\search.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\search.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\io.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\io.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\uci.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\uci.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\board.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\board.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\xboard.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\xboard.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\validation.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\validation.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\polykeys.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\polykeys.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\data.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\data.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\hashKey.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\hashKey.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\bitboard.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\bitboard.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\io.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\io.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\polykeys.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\polykeys.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\arora.exe||{177559E0-D141-11D0-92DF-00A0C9138C45}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\arora.exe||{177559E0-D141-11D0-92DF-00A0C9138C45}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\makemove.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\makemove.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\evaluate.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\evaluate.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\attack.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\attack.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,162 +42,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "search.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\search.c",
-              "RelativeDocumentMoniker": "source\\search.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\search.c",
-              "RelativeToolTip": "source\\search.c",
-              "ViewState": "AQIAAFMBAAAAAAAAAAAAACABAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:56:42.847Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "uci.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\uci.c",
-              "RelativeDocumentMoniker": "source\\uci.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\uci.c",
-              "RelativeToolTip": "source\\uci.c",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAoAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:47:26.159Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "validation.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\validation.c",
-              "RelativeDocumentMoniker": "source\\validation.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\validation.c",
-              "RelativeToolTip": "source\\validation.c",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:45:27.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "movegen.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\movegen.c",
-              "RelativeDocumentMoniker": "source\\movegen.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\movegen.c",
-              "RelativeToolTip": "source\\movegen.c",
-              "ViewState": "AQIAAG4BAAAAAAAAAAAAAOwBAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:44:38.687Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "makemove.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\makemove.c",
-              "RelativeDocumentMoniker": "source\\makemove.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\makemove.c",
-              "RelativeToolTip": "source\\makemove.c",
-              "ViewState": "AQIAAPAAAAAAAAAAAAAAAGoBAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:44:09.41Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "arora.exe",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\arora.exe",
-              "RelativeDocumentMoniker": "source\\arora.exe",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\arora.exe",
-              "RelativeToolTip": "source\\arora.exe",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000165|",
-              "WhenOpened": "2024-05-17T10:42:03.253Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "io.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\io.c",
-              "RelativeDocumentMoniker": "source\\io.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\io.c",
-              "RelativeToolTip": "source\\io.c",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAtwDQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:41:35.815Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "board.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\board.c",
-              "RelativeDocumentMoniker": "source\\board.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\board.c",
-              "RelativeToolTip": "source\\board.c",
-              "ViewState": "AQIAAJAAAAAAAAAAAAAAAG8BAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:39:46.244Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "bitboard.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\bitboard.c",
-              "RelativeDocumentMoniker": "source\\bitboard.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\bitboard.c",
-              "RelativeToolTip": "source\\bitboard.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:39:29.714Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "hashKey.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\hashKey.c",
-              "RelativeDocumentMoniker": "source\\hashKey.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\hashKey.c",
-              "RelativeToolTip": "source\\hashKey.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:38:10.502Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "defs.h",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\defs.h",
-              "RelativeDocumentMoniker": "source\\defs.h",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\defs.h",
-              "RelativeToolTip": "source\\defs.h",
-              "ViewState": "AQIAAHcAAAAAAAAAAAAiwEoBAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-17T10:33:39.581Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "data.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\data.c",
-              "RelativeDocumentMoniker": "source\\data.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\data.c",
-              "RelativeToolTip": "source\\data.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:33:23.929Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -234,36 +52,99 @@
               "RelativeDocumentMoniker": "source\\arora.c",
               "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\arora.c",
               "RelativeToolTip": "source\\arora.c",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAABwAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:18:24.721Z",
+              "WhenOpened": "2024-05-18T08:48:19.954Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "evaluate.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\evaluate.c",
-              "RelativeDocumentMoniker": "source\\evaluate.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\evaluate.c",
-              "RelativeToolTip": "source\\evaluate.c",
+              "DocumentIndex": 2,
+              "Title": "io.c",
+              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\io.c",
+              "RelativeDocumentMoniker": "source\\io.c",
+              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\io.c",
+              "RelativeToolTip": "source\\io.c",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-05-18T08:48:07.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "uci.c",
+              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\uci.c",
+              "RelativeDocumentMoniker": "source\\uci.c",
+              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\uci.c",
+              "RelativeToolTip": "source\\uci.c",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-05-18T08:47:40.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "polykeys.h",
+              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\polykeys.h",
+              "RelativeDocumentMoniker": "source\\polykeys.h",
+              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\polykeys.h",
+              "RelativeToolTip": "source\\polykeys.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-18T08:45:16.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "polykeys.c",
+              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\polykeys.c",
+              "RelativeDocumentMoniker": "source\\polykeys.c",
+              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\polykeys.c",
+              "RelativeToolTip": "source\\polykeys.c",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-17T10:16:59.775Z",
+              "WhenOpened": "2024-05-18T08:44:51.261Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "attack.c",
-              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\attack.c",
-              "RelativeDocumentMoniker": "source\\attack.c",
-              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\attack.c",
-              "RelativeToolTip": "source\\attack.c",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "polybook.c",
+              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\polybook.c",
+              "RelativeDocumentMoniker": "source\\polybook.c",
+              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\polybook.c",
+              "RelativeToolTip": "source\\polybook.c",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAAABMAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-16T15:19:58.499Z",
+              "WhenOpened": "2024-05-18T08:44:04.223Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "xboard.c",
+              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\xboard.c",
+              "RelativeDocumentMoniker": "source\\xboard.c",
+              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\xboard.c",
+              "RelativeToolTip": "source\\xboard.c",
+              "ViewState": "AQIAADUBAAAAAAAAAAAAAEQAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-05-17T15:11:01.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "arora.exe",
+              "DocumentMoniker": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\arora.exe",
+              "RelativeDocumentMoniker": "source\\arora.exe",
+              "ToolTip": "C:\\Users\\Marvel ENT\\Documents\\GitHub\\Arora-\\source\\arora.exe",
+              "RelativeToolTip": "source\\arora.exe",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000165|",
+              "WhenOpened": "2024-05-17T14:38:43.545Z"
             }
           ]
         }

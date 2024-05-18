@@ -131,7 +131,7 @@ int EvalPosition(const S_BOARD *pos) {
 		
 		if( (WhitePassedMask[SQ64(sq)] & pos->pawns[BLACK]) == 0) {
 			//printf("wP Passed:%s\n",PrSq(sq));
-			score += PawnPassed[RanksBrd[sq]];
+			score += PawnPassed[ranksBrd[sq]];
 		}
 		
 	}	
@@ -150,7 +150,7 @@ int EvalPosition(const S_BOARD *pos) {
 		
 		if( (BlackPassedMask[SQ64(sq)] & pos->pawns[WHITE]) == 0) {
 			//printf("bP Passed:%s\n",PrSq(sq));
-			score -= PawnPassed[7 - RanksBrd[sq]];
+			score -= PawnPassed[7 - ranksBrd[sq]];
 		}
 	}	
 	
@@ -195,7 +195,7 @@ int EvalPosition(const S_BOARD *pos) {
 		
 		ASSERT(FileRankValid(FilesBrd[sq]));
 		
-		if(!(pos->pawns[BOTH] & FileBBMask[FilesBrd[sq]])) {
+		if(!(pos->pawns[BOTH] & FileBBMask[filesBrd[sq]])) {
 			score += RookOpenFile;
 		} else if(!(pos->pawns[WHITE] & FileBBMask[FilesBrd[sq]])) {
 			score += RookSemiOpenFile;
@@ -209,9 +209,9 @@ int EvalPosition(const S_BOARD *pos) {
 		ASSERT(MIRROR64(SQ64(sq))>=0 && MIRROR64(SQ64(sq))<=63);
 		score -= RookTable[MIRROR64(SQ64(sq))];
 		ASSERT(FileRankValid(FilesBrd[sq]));
-		if(!(pos->pawns[BOTH] & FileBBMask[FilesBrd[sq]])) {
+		if(!(pos->pawns[BOTH] & FileBBMask[filesBrd[sq]])) {
 			score -= RookOpenFile;
-		} else if(!(pos->pawns[BLACK] & FileBBMask[FilesBrd[sq]])) {
+		} else if(!(pos->pawns[BLACK] & FileBBMask[filesBrd[sq]])) {
 			score -= RookSemiOpenFile;
 		}
 	}	
