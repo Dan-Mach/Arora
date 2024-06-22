@@ -1,6 +1,5 @@
-// attack.c
 
-#include "stdio.h"
+#include <stdio.h>
 #include "defs.h"
 
 const int KnDir[8] = { -8, -19,	-21, -12, 8, 19, 21, 12 };
@@ -21,7 +20,8 @@ int SqAttacked(const int sq, const int side, const S_BOARD *pos) {
 		if(pos->pieces[sq-11] == wP || pos->pieces[sq-9] == wP) {
 			return TRUE;
 		}
-	} else {
+	} 
+	else {
 		if(pos->pieces[sq+11] == bP || pos->pieces[sq+9] == bP) {
 			return TRUE;
 		}	
